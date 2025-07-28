@@ -4,8 +4,8 @@ import Image from "next/image";
 export function Header() {
   return (<>
     <div className='w-full flex justify-stretch'>
-      <Block className="w-[300px] p-0 aspect-square bg-gray-700">
-        <img src={'file.svg'} alt=''/>
+      <Block className="w-[20rem] p-0 aspect-square bg-gray-700">
+        <img src='thomas.jpg' alt=''/>
       </Block>
       <Block className="flex-1 bg-gray-700">
         INFO

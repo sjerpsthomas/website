@@ -4,9 +4,24 @@ import {AbilitiesBlock} from "@/app/[locale]/cv/AbilitiesBlock";
 import {ExperienceBlock} from "@/app/[locale]/cv/ExperienceBlock";
 
 
+const D = {
+  nl: {
+    factDigital: "Leuk feitje: als je deze pagina print, krijg je mijn echte CV!",
+    factPrint: "Leuk feitje: deze pagina is een afdruk van thomassjerps.nl/cv!"
+  },
+  en: {
+    factDigital: "Fun fact: if you print this page, you get my actual CV!",
+    factPrint: "Fun fact: this page is a print-out of thomassjerps.nl/cv!"
+  },
+}
+
+
 export default async function CVPage({ params }: { params: Promise<{ locale: string }> }) {
   // Get locale
   const locale = (await params).locale as Locale;
+
+  // Get dictionary
+  const dict = D[locale];
 
   return (
     <>
@@ -15,7 +30,6 @@ export default async function CVPage({ params }: { params: Promise<{ locale: str
 
       {/* Content */}
       <main>
-
         <div className='flex flex-wrap justify-stretch items-stretch gap-y-5'>
           {/* Abilities */}
           <div className='flex-1 min-w-fit'>
@@ -29,6 +43,12 @@ export default async function CVPage({ params }: { params: Promise<{ locale: str
         </div>
 
       </main>
+
+      {/* Printout comment */}
+      <p className='text-center mt-6 mb-3 italic'>
+        <p className='block print:hidden'>{dict.factDigital}</p>
+        <p className='hidden print:block'>{dict.factPrint}</p>
+      </p>
     </>
   );
 }

@@ -2,9 +2,22 @@ import {Header} from "@/components/header/Header";
 import {Locale} from "@/i18n/routing";
 
 
+const D = {
+  nl: {
+    factPrint: "Leuk feitje: deze pagina is een afdruk van thomassjerps.nl/portfolio!"
+  },
+  en: {
+    factPrint: "Fun fact: this page is a print-out of thomassjerps.nl/portfolio!"
+  },
+}
+
+
 export default async function PortfolioPage({ params }: { params: Promise<{ locale: string }> }) {
   // Get locale
   const locale = (await params).locale as Locale;
+
+  // Get dictionary
+  const dict = D[locale];
 
   return (
     <>
@@ -15,6 +28,11 @@ export default async function PortfolioPage({ params }: { params: Promise<{ loca
       <main>
         {/* TODO */}
       </main>
+
+      {/* Printout comment */}
+      <p className='text-center mt-6 mb-3 italic'>
+        <p className='hidden print:block'>{dict.factPrint}</p>
+      </p>
     </>
   );
 }

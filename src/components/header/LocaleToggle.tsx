@@ -4,13 +4,9 @@ import {CallbackBlock} from "@/components/Block";
 import {usePathname, useRouter} from '@/i18n/navigation';
 import {useLocale} from "use-intl";
 import classNames from "classnames";
-import {useTranslations} from "next-intl";
 
 
 export function LocaleToggle() {
-  // Translation function
-  const t = useTranslations('Header');
-
   // Locale toggle logic
   const pathname = usePathname();
   const router = useRouter();

@@ -1,9 +1,22 @@
 ﻿import {Block, LinkBlock} from "@/components/Block";
 import {LocaleToggle} from "@/components/header/LocaleToggle";
-import {useTranslations} from "next-intl";
+import {useMessages, useTranslations} from "next-intl";
+import {useTranslationsObject} from "@/i18n/useTranslationsObject";
+
+function Socials() {
+  const [linkKeys, links] = useTranslationsObject<string>('header.socials', 'link');
+
+  return (
+    <>
+      {linkKeys.map(it => (
+        <div key={it}>{links[it]}</div>
+      ))}
+    </>
+  );
+}
 
 export function Header() {
-  const t = useTranslations('Header');
+  const t = useTranslations('header');
 
   return (<>
     {/* Top of header */}
@@ -14,7 +27,7 @@ export function Header() {
       {/* Socials */}
       <Block className="flex-1 bg-gray-700">
         <h1>{t('title')}</h1>
-        <p>TODO: socials</p>
+        <Socials/>
       </Block>
     </header>
 

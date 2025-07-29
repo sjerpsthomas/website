@@ -4,6 +4,7 @@ import "../globals.css";
 import {NextIntlClientProvider, hasLocale} from 'next-intl';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
+import {twMerge} from "tailwind-merge";
 
 const font = Geist({
   subsets: ["latin"],
@@ -29,7 +30,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <body className={`${font.className}`}>
+      <body className={twMerge(font.className, 'p-5 md:px-20 md:py-10')}>
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
     </html>

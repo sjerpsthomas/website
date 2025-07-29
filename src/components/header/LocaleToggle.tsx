@@ -18,14 +18,14 @@ export function LocaleToggle() {
   }
 
   return (
-    <CallbackBlock className="bg-gray-700 min-w-[15em] cursor-pointer shadow-lg" onClick={toggleLocale}>
+    <CallbackBlock className="bg-gray-700 min-w-[6rem] md:min-w-[7rem] cursor-pointer shadow-lg" onClick={toggleLocale}>
       <p className='text-center'>
         <span className={twMerge(locale == 'nl' && 'font-black underline')}>
-          Nederlands
+          NL
         </span>
         {' / '}
         <span className={twMerge(locale == 'en' && 'font-black underline')}>
-          English
+          EN
         </span>
       </p>
     </CallbackBlock>

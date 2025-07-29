@@ -12,7 +12,8 @@ export function Block({
   className,
 }: Readonly<BlockProps>) {
   return (<>
-    <div className={twMerge('bg-gray-700 m-3 p-5 print:p-2 rounded-3xl', className)}>
+    <div className={twMerge('bg-[#222] m-1 md:m-3 p-4 print:p-2 md:p-5 rounded-xl md:rounded-3xl', className)}>
+    {/*<div className={twMerge('bg-[#222] m-3 p-5 print:p-2 rounded-3xl', className)}>*/}
       { children }
     </div>
   </>);
@@ -24,8 +25,8 @@ export function LinkBlock({
   href,
 }: Readonly<BlockProps & {href: string}>) {
   return (
-    <Link className='m-3' href={href}>
-      <Block className={twMerge('m-0 bg-blue-900 hover:scale-105 transition-transform', className)}>
+    <Link className='m-1 md:m-3' href={href}>
+      <Block className={twMerge('m-0 md:m-0 bg-blue-900 hover:scale-105 transition-transform', className)}>
         {children}
       </Block>
     </Link>

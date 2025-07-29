@@ -33,7 +33,7 @@ export function ExperienceBlock({ locale }: { locale: Locale }) {
   const dict = D.nl;//[locale];
 
   return (<>
-    <Block className='h-full'>
+    <Block className='h-full pr-10'>
       <h1>{dict.title}</h1>
 
       <section>

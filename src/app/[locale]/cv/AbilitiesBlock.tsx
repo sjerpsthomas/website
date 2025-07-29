@@ -70,7 +70,7 @@ export function AbilitiesBlock({ locale }: { locale: Locale }) {
   const dict = D[locale];
 
   return (<>
-    <Block className='h-full'>
+    <Block className='h-full pr-10'>
       <h1>{dict.title}</h1>
 
       <section>

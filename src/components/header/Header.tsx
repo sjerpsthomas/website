@@ -1,0 +1,39 @@
+﻿import {Block, LinkBlock} from "@/components/Block";
+import {LanguageSwitcher} from "@/components/header/LanguageSwitcher";
+
+export function Header() {
+  return (<>
+    {/* Top of header */}
+    <header className='w-full flex flex-wrap justify-center'>
+      {/* Image */}
+      <img className="w-[15rem] m-3 rounded-3xl aspect-square bg-gray-700" src='thomas.jpg' alt=''/>
+
+      {/* Socials */}
+      <Block className="flex-1 bg-gray-700">
+        <h1>Thomas Sjerps</h1>
+        <p>TODO: socials</p>
+      </Block>
+    </header>
+
+    {/* Nav bar */}
+    <nav className='w-full flex flex-wrap sticky top-0'>
+      {/* Language switcher */}
+      <LanguageSwitcher/>
+
+      {/* CV */}
+      <LinkBlock className="min-w-[10em]" href='/'>
+        <p className='text-center'>Home</p>
+      </LinkBlock>
+
+      {/* CV */}
+      <LinkBlock className="min-w-[10em]" href='/cv'>
+        <p className='text-center'>CV</p>
+      </LinkBlock>
+
+      {/* Portfolio */}
+      <LinkBlock className="min-w-[10em]" href='/portfolio'>
+        <p className='text-center'>Portfolio</p>
+      </LinkBlock>
+    </nav>
+  </>)
+}

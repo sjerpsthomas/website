@@ -1,5 +1,6 @@
 import {Header} from "@/components/header/Header";
 import {Locale} from "@/i18n/routing";
+import {Footer} from "@/components/Footer";
 
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
@@ -9,12 +10,15 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   return (
     <>
       {/* Header */}
-      <Header locale={locale} currentPage='home' />
+      <Header locale={locale} currentPage='home'/>
 
       {/* Content */}
       <main>
         {/* TODO */}
       </main>
+
+      {/* Footer */}
+      <Footer locale={locale}/>
     </>
   );
 }

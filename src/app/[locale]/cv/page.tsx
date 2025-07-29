@@ -2,6 +2,7 @@ import {Header} from "@/components/header/Header";
 import {Locale} from "@/i18n/routing";
 import {AbilitiesBlock} from "@/app/[locale]/cv/AbilitiesBlock";
 import {ExperienceBlock} from "@/app/[locale]/cv/ExperienceBlock";
+import {Footer} from "@/components/Footer";
 
 
 const D = {
@@ -26,7 +27,7 @@ export default async function CVPage({ params }: { params: Promise<{ locale: str
   return (
     <>
       {/* Header */}
-      <Header locale={locale} currentPage='cv' />
+      <Header locale={locale} currentPage='cv'/>
 
       {/* Content */}
       <main>
@@ -45,10 +46,13 @@ export default async function CVPage({ params }: { params: Promise<{ locale: str
       </main>
 
       {/* Printout comment */}
-      <p className='text-center mt-6 mb-3 italic'>
+      <div className='text-center text-sm mt-6 mb-3 italic'>
         <p className='block print:hidden'>{dict.factDigital}</p>
         <p className='hidden print:block'>{dict.factPrint}</p>
-      </p>
+      </div>
+
+      {/* Footer */}
+      <Footer locale={locale}/>
     </>
   );
 }

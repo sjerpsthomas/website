@@ -3,7 +3,7 @@ import {LocaleToggle} from "@/components/header/LocaleToggle";
 import {useTranslations} from "next-intl";
 
 export function Header() {
-  const t = useTranslations('HomePage');
+  const t = useTranslations('Header');
 
   return (<>
     {/* Top of header */}
@@ -13,31 +13,34 @@ export function Header() {
 
       {/* Socials */}
       <Block className="flex-1 bg-gray-700">
-        <h1>Thomas Sjerps</h1>
+        <h1>{t('title')}</h1>
         <p>TODO: socials</p>
-        <p>{t('title')}</p>
       </Block>
     </header>
 
     {/* Nav bar */}
-    <nav className='w-full flex flex-wrap sticky top-0'>
+    <nav className='w-full flex flex-wrap justify-center sticky top-0'>
       {/* Language switcher */}
       <LocaleToggle/>
 
-      {/* CV */}
-      <LinkBlock className="min-w-[10em]" href='/'>
-        <p className='text-center'>Home</p>
-      </LinkBlock>
+      {/* Other buttons */}
+      <div className="flex flex-wrap justify-center">
+        {/* CV */}
+        <LinkBlock className="min-w-[10em]" href='/'>
+          <p className='text-center'>Home</p>
+        </LinkBlock>
 
-      {/* CV */}
-      <LinkBlock className="min-w-[10em]" href='/cv'>
-        <p className='text-center'>CV</p>
-      </LinkBlock>
+        {/* CV */}
+        <LinkBlock className="min-w-[10em]" href='/cv'>
+          <p className='text-center'>CV</p>
+        </LinkBlock>
 
-      {/* Portfolio */}
-      <LinkBlock className="min-w-[10em]" href='/portfolio'>
-        <p className='text-center'>Portfolio</p>
-      </LinkBlock>
+        {/* Portfolio */}
+        <LinkBlock className="min-w-[10em]" href='/portfolio'>
+          <p className='text-center'>Portfolio</p>
+        </LinkBlock>
+      </div>
+
     </nav>
   </>)
 }

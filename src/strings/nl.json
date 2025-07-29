@@ -1,6 +1,5 @@
 {
-  "HomePage": {
-    "title": "Hello world(NL)!",
-    "about": "Go to the about page(NL)"
+  "Header": {
+    "title": "Thomas Sjerps"
   }
 }

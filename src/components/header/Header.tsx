@@ -2,6 +2,7 @@
 import {LocaleToggle} from "@/components/header/LocaleToggle";
 import {Locale} from "@/i18n/routing";
 import {getDictKeys} from "@/utils/getDictKeys";
+import classNames from "classnames";
 
 
 const socials = {
@@ -28,8 +29,9 @@ const D = {
   },
 };
 
+type CurrentPage = 'home' | 'cv' | 'portfolio';
 
-export function Header({locale}: {locale: Locale}) {
+export function Header({locale, currentPage}: {locale: Locale, currentPage: CurrentPage}) {
   const dict = D[locale];
 
   return (<>
@@ -58,7 +60,7 @@ export function Header({locale}: {locale: Locale}) {
     </header>
 
     {/* Nav bar */}
-    <nav className='w-full flex flex-wrap justify-center sticky top-0'>
+    <nav className='w-full flex flex-wrap justify-center sticky top-0 print:hidden'>
       {/* Language switcher */}
       <LocaleToggle/>
 
@@ -66,17 +68,17 @@ export function Header({locale}: {locale: Locale}) {
       <div className="flex flex-wrap justify-center">
         {/* CV */}
         <LinkBlock className="min-w-[10em]" href='/'>
-          <p className='text-center'>Home</p>
+          <p className={classNames('text-center', { 'font-bold underline': currentPage == 'home' })}>Home</p>
         </LinkBlock>
 
         {/* CV */}
         <LinkBlock className="min-w-[10em]" href='/cv'>
-          <p className='text-center'>CV</p>
+          <p className={classNames('text-center', { 'font-bold underline': currentPage == 'cv' })}>CV</p>
         </LinkBlock>
 
         {/* Portfolio */}
         <LinkBlock className="min-w-[10em]" href='/portfolio'>
-          <p className='text-center'>Portfolio</p>
+          <p className={classNames('text-center', { 'font-bold underline': currentPage == 'portfolio' })}>Portfolio</p>
         </LinkBlock>
       </div>
 

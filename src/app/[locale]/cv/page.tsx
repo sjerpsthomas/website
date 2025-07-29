@@ -9,7 +9,7 @@ export default async function CVPage({ params }: { params: Promise<{ locale: str
   return (
     <>
       {/* Header */}
-      <Header locale={locale} />
+      <Header locale={locale} currentPage='cv' />
 
       {/* Content */}
       <main>

@@ -9,7 +9,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   return (
     <>
       {/* Header */}
-      <Header locale={locale} />
+      <Header locale={locale} currentPage='home' />
 
       {/* Content */}
       <main>

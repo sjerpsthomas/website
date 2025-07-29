@@ -9,7 +9,7 @@ export default async function PortfolioPage({ params }: { params: Promise<{ loca
   return (
     <>
       {/* Header */}
-      <Header locale={locale} />
+      <Header locale={locale} currentPage='portfolio' />
 
       {/* Content */}
       <main>

@@ -1,5 +1,6 @@
 ﻿import Link from "next/link";
 import React from "react";
+import classNames from "classnames";
 
 type BlockProps = {
   children: React.ReactNode;
@@ -11,7 +12,7 @@ export function Block({
   className,
 }: Readonly<BlockProps>) {
   return (<>
-    <div className={`${className ?? ''} m-3 p-5 rounded-3xl`}>
+    <div className={classNames('m-3 p-5 rounded-3xl', className)}>
       { children }
     </div>
   </>);
@@ -23,8 +24,8 @@ export function LinkBlock({
   href,
 }: Readonly<BlockProps & {href: string}>) {
   return (
-    <Link href={href}>
-      <Block className={`${className ?? ''} bg-blue-900 hover:scale-105 transition-transform`}>
+    <Link className='m-3' href={href}>
+      <Block className={classNames('!m-0 bg-blue-900 hover:scale-105 transition-transform', className)}>
         {children}
       </Block>
     </Link>
@@ -38,7 +39,7 @@ export function CallbackBlock({
 }: Readonly<BlockProps & {onClick: () => void}>) {
   return (
     <button onClick={onClick}>
-      <Block className={`${className ?? ''} bg-blue-900 hover:scale-105 transition-transform`}>
+      <Block className={classNames('bg-blue-900 hover:scale-105 transition-transform', className)}>
         {children}
       </Block>
     </button>

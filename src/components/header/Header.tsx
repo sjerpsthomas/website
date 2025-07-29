@@ -68,17 +68,17 @@ export function Header({locale, currentPage}: {locale: Locale, currentPage: Curr
       {/* Other buttons */}
       <div className="flex flex-wrap justify-center">
         {/* Home */}
-        <LinkBlock className="min-w-[6rem] md:min-w-[8rem] shadow-lg" href='/'>
+        <LinkBlock className="w-[6rem] md:w-[8rem] md:py-3 shadow-lg" href='/'>
           <p className={twMerge('text-center', currentPage == 'home' && 'font-bold underline')}>Home</p>
         </LinkBlock>
 
         {/* CV */}
-        <LinkBlock className="min-w-[6rem] md:min-w-[8rem] shadow-lg" href='/cv'>
+        <LinkBlock className="w-[6rem] md:w-[8rem] md:py-3 shadow-lg" href='/cv'>
           <p className={twMerge('text-center', currentPage == 'cv' && 'font-bold underline')}>CV</p>
         </LinkBlock>
 
         {/* Portfolio */}
-        <LinkBlock className="min-w-[6rem] md:min-w-[8rem] shadow-lg" href='/portfolio'>
+        <LinkBlock className="w-[6rem] md:w-[8rem] md:py-3 shadow-lg" href='/portfolio'>
           <p className={twMerge('text-center', currentPage == 'portfolio' && 'font-bold underline')}>Portfolio</p>
         </LinkBlock>
       </div>

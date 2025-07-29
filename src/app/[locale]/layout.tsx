@@ -30,7 +30,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <body className={twMerge(font.className, 'p-5 md:px-20 md:py-10')}>
+      <body className={twMerge(font.className, 'px-5 pt-5 pb-20 md:px-20 md:pt-10 md:pb-40')}>
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
     </html>

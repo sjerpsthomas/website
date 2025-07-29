@@ -18,7 +18,7 @@ export function LocaleToggle() {
   }
 
   return (
-    <CallbackBlock className="bg-gray-700 min-w-[6rem] md:min-w-[7rem] cursor-pointer shadow-lg" onClick={toggleLocale}>
+    <CallbackBlock className="bg-gray-700 w-[6rem] md:w-[7rem] md:py-3 cursor-pointer shadow-lg" onClick={toggleLocale}>
       <p className='text-center'>
         <span className={twMerge(locale == 'nl' && 'font-black underline')}>
           NL

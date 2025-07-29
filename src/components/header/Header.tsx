@@ -1,24 +1,28 @@
 ﻿import {Block, LinkBlock} from "@/components/Block";
-import {LanguageSwitcher} from "@/components/header/LanguageSwitcher";
+import {LocaleToggle} from "@/components/header/LocaleToggle";
+import {useTranslations} from "next-intl";
 
 export function Header() {
+  const t = useTranslations('HomePage');
+
   return (<>
     {/* Top of header */}
     <header className='w-full flex flex-wrap justify-center'>
       {/* Image */}
-      <img className="w-[15rem] m-3 rounded-3xl aspect-square bg-gray-700" src='thomas.jpg' alt=''/>
+      <img className="w-[15rem] m-3 rounded-3xl aspect-square bg-gray-700" src='/thomas.jpg' alt=''/>
 
       {/* Socials */}
       <Block className="flex-1 bg-gray-700">
         <h1>Thomas Sjerps</h1>
         <p>TODO: socials</p>
+        <p>{t('title')}</p>
       </Block>
     </header>
 
     {/* Nav bar */}
     <nav className='w-full flex flex-wrap sticky top-0'>
       {/* Language switcher */}
-      <LanguageSwitcher/>
+      <LocaleToggle/>
 
       {/* CV */}
       <LinkBlock className="min-w-[10em]" href='/'>

@@ -39,7 +39,7 @@ export function Header({locale, currentPage}: {locale: Locale, currentPage: Curr
     {/* Top of header */}
     <header className='w-full flex flex-wrap justify-center'>
       {/* Image */}
-      <img className="w-[15rem] m-3 rounded-3xl aspect-square" src='/thomas.jpg' alt=''/>
+      <img className="w-[15rem] print:w-[10rem] m-3 rounded-3xl aspect-square" src='/thomas.jpg' alt=''/>
 
       {/* Title block */}
       <Block className="flex-1">

@@ -1,5 +1,18 @@
 @import "tailwindcss";
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-5xl font-bold mb-4;
+  }
+  h2 {
+    @apply text-2xl font-bold;
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

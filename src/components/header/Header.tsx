@@ -2,7 +2,7 @@
 import {LocaleToggle} from "@/components/header/LocaleToggle";
 import {Locale} from "@/i18n/routing";
 import {getDictKeys} from "@/utils/getDictKeys";
-import classNames from "classnames";
+import {twMerge} from "tailwind-merge";
 
 
 const socials = {
@@ -32,16 +32,17 @@ const D = {
 type CurrentPage = 'home' | 'cv' | 'portfolio';
 
 export function Header({locale, currentPage}: {locale: Locale, currentPage: CurrentPage}) {
+  // Get dictionary
   const dict = D[locale];
 
   return (<>
     {/* Top of header */}
     <header className='w-full flex flex-wrap justify-center'>
       {/* Image */}
-      <img className="w-[15rem] m-3 rounded-3xl aspect-square bg-gray-700" src='/thomas.jpg' alt=''/>
+      <img className="w-[15rem] m-3 rounded-3xl aspect-square" src='/thomas.jpg' alt=''/>
 
       {/* Title block */}
-      <Block className="flex-1 bg-gray-700">
+      <Block className="flex-1">
         {/* Name */}
         <h1>{dict.name}</h1>
 
@@ -68,17 +69,17 @@ export function Header({locale, currentPage}: {locale: Locale, currentPage: Curr
       <div className="flex flex-wrap justify-center">
         {/* CV */}
         <LinkBlock className="min-w-[10em]" href='/'>
-          <p className={classNames('text-center', { 'font-bold underline': currentPage == 'home' })}>Home</p>
+          <p className={twMerge('text-center', currentPage == 'home' && 'font-bold underline')}>Home</p>
         </LinkBlock>
 
         {/* CV */}
         <LinkBlock className="min-w-[10em]" href='/cv'>
-          <p className={classNames('text-center', { 'font-bold underline': currentPage == 'cv' })}>CV</p>
+          <p className={twMerge('text-center', currentPage == 'cv' && 'font-bold underline')}>CV</p>
         </LinkBlock>
 
         {/* Portfolio */}
         <LinkBlock className="min-w-[10em]" href='/portfolio'>
-          <p className={classNames('text-center', { 'font-bold underline': currentPage == 'portfolio' })}>Portfolio</p>
+          <p className={twMerge('text-center', currentPage == 'portfolio' && 'font-bold underline')}>Portfolio</p>
         </LinkBlock>
       </div>
 

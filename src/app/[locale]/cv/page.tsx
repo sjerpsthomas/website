@@ -1,5 +1,6 @@
 import {Header} from "@/components/header/Header";
 import {Locale} from "@/i18n/routing";
+import {Abilities} from "@/app/[locale]/cv/Abilities";
 
 
 export default async function CVPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -13,7 +14,12 @@ export default async function CVPage({ params }: { params: Promise<{ locale: str
 
       {/* Content */}
       <main>
-        {/* TODO */}
+
+        <div>
+          {/* Abilities */}
+          <Abilities locale={locale}/>
+        </div>
+
       </main>
     </>
   );

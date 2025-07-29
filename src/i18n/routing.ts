@@ -1,6 +1,6 @@
 import {defineRouting} from 'next-intl/routing';
 
-const locales = ['en', 'nl'] as const;
+const locales = ['nl', 'en'] as const;
 export type Locale = typeof locales[number];
 
 export const routing = defineRouting({

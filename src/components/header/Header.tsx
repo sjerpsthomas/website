@@ -1,22 +1,36 @@
 ﻿import {Block, LinkBlock} from "@/components/Block";
 import {LocaleToggle} from "@/components/header/LocaleToggle";
-import {useMessages, useTranslations} from "next-intl";
-import {useTranslationsObject} from "@/i18n/useTranslationsObject";
+import {Locale} from "@/i18n/routing";
+import {getDictKeys} from "@/utils/getDictKeys";
 
-function Socials() {
-  const [linkKeys, links] = useTranslationsObject<string>('header.socials', 'link');
 
-  return (
-    <>
-      {linkKeys.map(it => (
-        <div key={it}>{links[it]}</div>
-      ))}
-    </>
-  );
+const socials = {
+  linkedIn: {
+    name: "LinkedIn",
+    username: 'thomassjerps ofzo',
+    href: "google.com",
+  },
+  gitHub: {
+    name: "GitHub",
+    username: 'thomassjerps ofzo',
+    href: "https://github.com/gitHub",
+  }
 }
 
-export function Header() {
-  const t = useTranslations('header');
+const D = {
+  nl: {
+    name: "Thomas Sjerps",
+    socials: socials,
+  },
+  en: {
+    name: "Thomas Sjerps",
+    socials: socials,
+  },
+};
+
+
+export function Header({locale}: {locale: Locale}) {
+  const dict = D[locale];
 
   return (<>
     {/* Top of header */}
@@ -24,10 +38,22 @@ export function Header() {
       {/* Image */}
       <img className="w-[15rem] m-3 rounded-3xl aspect-square bg-gray-700" src='/thomas.jpg' alt=''/>
 
-      {/* Socials */}
+      {/* Title block */}
       <Block className="flex-1 bg-gray-700">
-        <h1>{t('title')}</h1>
-        <Socials/>
+        {/* Name */}
+        <h1>{dict.name}</h1>
+
+        {/* Socials */}
+        {
+          getDictKeys(dict.socials).map(it =>
+            <p key={it}>
+              {dict.socials[it].name}
+              {': '}
+              <a href={dict.socials[it].href}>{dict.socials[it].username}</a>
+            </p>
+          )
+        }
+
       </Block>
     </header>
 

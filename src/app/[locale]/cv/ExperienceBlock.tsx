@@ -13,7 +13,8 @@ const D = {
           "bestuurlijke taken uitgevoerd als commissaris intern, de zogenaamde 'jazzcommissaris', en vice-penningmeester. " +
           "Buiten mijn vaste taken, waaronder verantwoordelijkheid voor het gros van de activiteiten en de muzikale " +
           "identiteit van de vereniging, werkte ik als vice-penningmeester mee aan een grootschalige hervorming van de " +
-          "financiele systemen die de vereniging gebruikte (waaronder een wissel van de BTW-status).",
+          "financiele systemen die de vereniging gebruikte (waaronder een wissel van de BTW-status, en een hernieuwde " +
+          "'turftablet' voor gebruik achter de bar).",
         skills: [
           "...",
         ],
@@ -22,7 +23,12 @@ const D = {
       {
         title: "Websitecommissielid",
         company: "D.S.J.V. Groover, Delft",
-        description: "Beschrijving",
+        description: "Op 20 maart 2024 (toen ik nog bestuurslid was), werd een hernieuwde website van de vereniging gelanceerd. " +
+          "Hoewel deze site zeker een verbetering was, was er vrijwel meteen een hoog niveau aan technical debt en " +
+          "functionaliteit die niet geheel zoals gewenst werkte. " +
+          "Vrijwel meteen na mijn decharge ben ik in de websitecommissie gegaan om deze dingen op te lossen. " +
+          "Als voorzitter heb ik de commissie aangestuurd om code-kwaliteit en -hergebruik te verbeteren, " +
+          "en op eigen initiatief heb ik veel elementen en pagina's herzien en opgeknapt.",
         skills: [
           "...",
         ],
@@ -31,7 +37,9 @@ const D = {
       {
         title: "Bijlesbegeleider",
         company: "Lyceo, Leiden",
-        description: "Beschrijving",
+        description: "Voor bijlesbedrijf Lyceo heb ik een traject uitgevoerd ('Lyceo Opstap') voor CITO-training voor " +
+          "een groepje van 5 groep 8'ers. De lessen bestonden uit voorgeschreven (groeps- en individuele) oefeningen, " +
+          "evenals uitleg in groepsverband.",
         skills: [
           "...",
         ],

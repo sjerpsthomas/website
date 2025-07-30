@@ -1,6 +1,7 @@
 import {Locale} from "@/i18n/routing";
 import {Block} from "@/components/Block";
 import {getDictKeys} from "@/utils/getDictKeys";
+import {BulletPointList} from "@/components/BulletPointList";
 
 
 const abilities = {
@@ -36,6 +37,10 @@ const D = {
       hobbies: "Hobby's",
     },
     abilities: {
+      qualities: [
+
+      ],
+      ...abilities,
       languages: [
         "Nederlands",
         "Engels",
@@ -83,7 +88,7 @@ export function AbilitiesBlock({ locale }: { locale: Locale }) {
   const dict = D[locale];
 
   return (<>
-    <Block className='h-full pr-10'>
+    <Block className='pr-10'>
       <h1>{dict.title}</h1>
 
       <section>
@@ -91,11 +96,7 @@ export function AbilitiesBlock({ locale }: { locale: Locale }) {
           getDictKeys(dict.headers).map((header) =>
             <div key={header} className='mb-3'>
               <h2>{dict.headers[header]}</h2>
-              {
-                dict.abilities[header].map((ability) =>
-                  <p key={ability}>{ability}</p>
-                )
-              }
+              <BulletPointList content={dict.abilities[header]}/>
             </div>
           )
         }

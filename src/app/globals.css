@@ -5,10 +5,14 @@
 
 @layer base {
   h1 {
-    @apply text-2xl md:text-5xl font-bold mb-4 print:mb-2;
+    @apply print:text-2xl text-2xl md:text-5xl font-bold mb-4 print:mb-2;
   }
   h2 {
-    @apply text-xl md:text-2xl font-bold;
+    @apply print:text-lg text-xl md:text-2xl font-bold;
+  }
+  p, li, span {
+    @apply print:text-[0.6rem] text-sm md:text-base;
+    /*@apply text-blue-500;*/
   }
 }
 

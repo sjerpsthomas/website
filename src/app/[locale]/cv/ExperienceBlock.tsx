@@ -1,5 +1,6 @@
 import {Locale} from "@/i18n/routing";
 import {Block} from "@/components/Block";
+import {BulletPointList} from "@/components/BulletPointList";
 
 const D = {
   nl: {
@@ -55,26 +56,22 @@ export function ExperienceBlock({ locale }: { locale: Locale }) {
   const dict = D.nl;//[locale];
 
   return (<>
-    <Block className='h-full pr-10'>
+    <Block className='pr-10'>
       <h1>{dict.title}</h1>
 
       <section>
         {
           dict.experiences.map((experience, i) =>
             <div key={i} className='mb-5'>
-              <h2>
-                {experience.title}
-                <span className='font-medium text-sm italic'>{' '}({experience.timespan})</span>
-              </h2>
+              <div>
+                <h2 className='inline'>{experience.title}</h2>
+                <span>{' @'}{experience.company}</span>
+                <span className='font-medium italic'>{' '}({experience.timespan})</span>
+              </div>
+
               <p className='mb-3'>{experience.description}</p>
               <p className='font-bold'>Skills:</p>
-              <ul className='list-disc list-inside'>
-                {
-                  experience.skills.map((skill, skillIndex) =>
-                    <li key={skillIndex}>{skill}</li>
-                  )
-                }
-              </ul>
+              <BulletPointList content={experience.skills}/>
             </div>
           )
         }

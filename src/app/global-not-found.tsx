@@ -3,7 +3,8 @@ import {Comic_Neue} from "next/font/google";
 import {twMerge} from "tailwind-merge";
 
 const font = Comic_Neue({
-  weight: '400'
+  subsets: ['latin'],
+  weight: '400',
 });
 
 export default async function NotFoundPage() {

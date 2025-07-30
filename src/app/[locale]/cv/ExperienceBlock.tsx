@@ -7,21 +7,43 @@ const D = {
     experiences: [
       {
         title: "Voltijd bestuurslid",
-        description: "ik was een voltijd bestuurslid enzo",
+        company: "D.S.J.V. Groover, Delft",
+        description: "Voor de Delftse Studenten Jazz Vereniging Groover heb ik een jaar vrijwillig voltijd " +
+          "bestuurlijke taken uitgevoerd als commissaris intern, de zogenaamde 'jazzcommissaris', en vice-penningmeester. " +
+          "Buiten mijn vaste taken, waaronder verantwoordelijkheid voor het gros van de activiteiten en de muzikale " +
+          "identiteit van de vereniging, werkte ik als vice-penningmeester mee aan een grootschalige hervorming van de " +
+          "financiele systemen die de vereniging gebruikte (waaronder een wissel van de BTW-status).",
         skills: [
-          "dingen",
-          "andere dingen"
+          "...",
         ],
         timespan: "2023-2024",
       },
       {
-        title: "Voltijd bestuurslid",
-        description: "ik was een voltijd bestuurslid enzo",
+        title: "Websitecommissielid",
+        company: "D.S.J.V. Groover, Delft",
+        description: "Beschrijving",
         skills: [
-          "dingen",
-          "andere dingen"
+          "...",
         ],
-        timespan: "2023-2024",
+        timespan: "2024-2025",
+      },
+      {
+        title: "Bijlesbegeleider",
+        company: "Lyceo, Leiden",
+        description: "Beschrijving",
+        skills: [
+          "...",
+        ],
+        timespan: "2019-2020",
+      },
+      {
+        title: "Verkoopmedewerker",
+        company: "Vomar, Venhuizen",
+        description: "Beschrijving",
+        skills: [
+          "...",
+        ],
+        timespan: "2017-2021",
       },
     ]
   }

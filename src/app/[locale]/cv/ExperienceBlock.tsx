@@ -24,7 +24,7 @@ const D = {
         description: "Voltijdsfunctie als commissaris intern (‘jazzcommissaris’) en vice-penningmeester. " +
           "Naast verantwoordelijkheid voor de meeste activiteiten en de muzikale identiteit van de vereniging, " +
           "droeg ik als vice-penningmeester bij aan een grootschalige hervorming van de financiële systemen, " +
-          "waaronder een BTW-statuswijziging en vernieuwing van het incassosysteem.",
+          "waaronder een BTW-statuswijziging en vernieuwing van het (SEPA) incassosysteem.",
         skills: [
           "Begeleiding van commissies",
           "Communicatie met derde partijen",
@@ -95,7 +95,7 @@ const D = {
         description: "Full-time position as Internal Affairs Commissioner (‘Jazz Commissioner’) and Vice Treasurer. " +
           "In addition to being responsible for most activities and the association’s musical identity, " +
           "I contributed as Vice Treasurer to a large-scale reform of the financial systems, " +
-          "including a change in VAT status and an overhaul of the direct debit system.",
+          "including a change in VAT status and an overhaul of the direct debit (SEPA) money collection system.",
         skills: [
           "Supervising committees",
           "Communicating with third parties",
@@ -153,7 +153,7 @@ export function ExperienceBlock({ locale }: { locale: Locale }) {
   const dict = D[locale];
 
   return (<>
-    <Block className='pr-10'>
+    <Block>
       <h1>{dict.title}</h1>
 
       <section>

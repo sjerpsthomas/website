@@ -51,7 +51,7 @@ export function EducationBlock({ locale }: { locale: Locale }) {
   const dict = D[locale];
 
   return (<>
-    <Block className='pr-10'>
+    <Block>
       <h1>{dict.title}</h1>
 
       <section className='flex flex-col gap-y-3 print:gap-y-1'>

@@ -34,13 +34,13 @@ export default async function CVPage({ params }: { params: Promise<{ locale: str
       <main>
         <div className='flex flex-wrap justify-stretch items-stretch'>
           {/* Education / Abilities */}
-          <div className='flex-1 flex flex-col print:w-[40%] not-print:min-w-[25rem]'>
+          <div className='flex-1 flex flex-col print:w-[40%]'>
             <EducationBlock locale={locale}/>
             <AbilitiesBlock locale={locale}/>
           </div>
 
           {/* Abilities */}
-          <div className='flex-1/4 print:w-[60%] not-print:min-w-[25rem]'>
+          <div className='flex-1/4 print:w-[60%]'>
             <ExperienceBlock locale={locale}/>
           </div>
         </div>

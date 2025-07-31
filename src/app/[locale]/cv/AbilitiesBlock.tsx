@@ -56,6 +56,7 @@ const D = {
         "Pianospelen",
         "Muziekproductie",
         "Fotografie",
+        "Theater",
       ]
     },
   },
@@ -88,6 +89,7 @@ const D = {
         "Piano playing",
         "Music production",
         "Photography",
+        "Theatre",
       ]
     },
   },
@@ -100,7 +102,7 @@ export function AbilitiesBlock({ locale }: { locale: Locale }) {
   const dict = D[locale];
 
   return (<>
-    <Block className='pr-10'>
+    <Block>
       <h1>{dict.title}</h1>
 
       <section>

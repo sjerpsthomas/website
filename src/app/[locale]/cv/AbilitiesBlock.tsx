@@ -38,7 +38,13 @@ const D = {
     },
     abilities: {
       qualities: [
-
+        "Creatief",
+        "Assertief",
+        "Proactief",
+        "Enthousiast",
+        "Nieuwsgierig",
+        "Precies",
+        "Kritisch",
       ],
       ...abilities,
       languages: [
@@ -64,7 +70,13 @@ const D = {
     },
     abilities: {
       qualities: [
-
+        "Creative",
+        "Assertive",
+        "Proactive",
+        "Enthusiastic",
+        "Curious",
+        "Precise",
+        "Critical",
       ],
       ...abilities,
       languages: [

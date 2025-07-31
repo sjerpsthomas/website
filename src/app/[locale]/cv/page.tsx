@@ -3,6 +3,7 @@ import {Locale} from "@/i18n/routing";
 import {AbilitiesBlock} from "@/app/[locale]/cv/AbilitiesBlock";
 import {ExperienceBlock} from "@/app/[locale]/cv/ExperienceBlock";
 import {Footer} from "@/components/Footer";
+import {EducationBlock} from "@/app/[locale]/cv/EducationBlock";
 
 
 const D = {
@@ -31,9 +32,10 @@ export default async function CVPage({ params }: { params: Promise<{ locale: str
 
       {/* Content */}
       <main>
-        <div className='flex flex-wrap justify-stretch items-stretch gap-y-5'>
-          {/* Abilities */}
-          <div className='flex-1 print:w-[40%] not-print:min-w-[25rem]'>
+        <div className='flex flex-wrap justify-stretch items-stretch'>
+          {/* Education / Abilities */}
+          <div className='flex-1 flex flex-col print:w-[40%] not-print:min-w-[25rem]'>
+            <EducationBlock locale={locale}/>
             <AbilitiesBlock locale={locale}/>
           </div>
 

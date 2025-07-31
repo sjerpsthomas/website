@@ -13,7 +13,6 @@ export function Block({
 }: Readonly<BlockProps>) {
   return (<>
     <div className={twMerge('bg-[#222] m-1 md:m-3 p-4 print:p-2 md:p-5 rounded-xl md:rounded-3xl shadow-heavy', className)}>
-    {/*<div className={twMerge('bg-[#222] m-3 p-5 print:p-2 rounded-3xl', className)}>*/}
       { children }
     </div>
   </>);

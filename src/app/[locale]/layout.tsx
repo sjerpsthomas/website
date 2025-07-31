@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Inter } from "next/font/google";
 import "../globals.css";
 import {NextIntlClientProvider, hasLocale} from 'next-intl';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
 import {twMerge} from "tailwind-merge";
 
-const font = Geist({
-  subsets: ["latin"],
-});
+const font = Inter({
+  subsets: ['latin'],
+})
 
 export const metadata: Metadata = {
   title: "Website!",

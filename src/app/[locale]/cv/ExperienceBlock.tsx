@@ -70,14 +70,11 @@ export function ExperienceBlock({ locale }: { locale: Locale }) {
       <section>
         {
           dict.experiences.map((experience, i) =>
-            <div key={i} className='mb-5'>
-              <div>
-                <h2 className='inline'>{experience.title}</h2>
-                <span>{' @'}{experience.company}</span>
-                <span className='font-medium italic'>{' '}({experience.timespan})</span>
-              </div>
+            <div key={i} className='mb-3 md:mb-5'>
+              <h2>{experience.title}</h2>
+              <p className='font-medium italic pl-5 mb-1 md:mb-2'>{experience.company} ({experience.timespan})</p>
 
-              <p className='mb-3'>{experience.description}</p>
+              <p className='mb-2 md:mb-3'>{experience.description}</p>
               <p className='font-bold'>Skills:</p>
               <BulletPointList content={experience.skills}/>
             </div>

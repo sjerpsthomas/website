@@ -9,7 +9,7 @@ const D = {
       {
         title: "Voorzitter websitecommissie (WebCie)",
         company: "D.S.J.V. Groover, Delft",
-        description: "Met de commissie (7 pers.) gewerkt aan betere codekwaliteit, documentatie, en mooier design " +
+        description: "Met de commissie (7 pers.) gewerkt aan betere codekwaliteit, documentatie, en verbeterd design " +
           "voor een nét iets te gehaast gelanceerde website.",
         skills: [
           "Software development in praktisch teamverband",
@@ -51,7 +51,7 @@ const D = {
         company: "Lyceo, Leiden / Privé, West-Friesland",
         description: "Bijles geven met voorgeschreven oefeningen en uitleg op maatwerk, zowel individueel als in groepsverband. " +
           "Voor bijlesbedrijf Lyceo heb ik een traject uitgevoerd ('Lyceo Opstap') voor CITO-training voor " +
-          "een groepje van 5 groep 8'ers (het traject is in maart 2020 afgelast vanwege corona). " +
+          "een groepje van 5 groep 8'ers; het traject is in maart 2020 vroegtijdig stopgezet vanwege COVID. " +
           "Tijdens de coronaperiode heb ik via privécontacten examentraining gegeven aan middelbare scholieren.",
         skills: [
           "Zorgvuldig begeleiden van leerlingen",
@@ -72,14 +72,85 @@ const D = {
         ],
         timespan: "2017-2021, ±18u/week",
       },
-    ]
-  }
+    ],
+  },
+  en: {
+    title: "Experience",
+    experiences: [
+      {
+        title: "Chair of Website Committee (WebCie)",
+        company: "D.S.J.V. Groover, Delft",
+        description: "Worked with the committee (7 people) on improving code quality, documentation, and design " +
+          "for a website that had been launched a little too hastily.",
+        skills: [
+          "Software development in a practical team setting",
+          "Planning and delegating development and design tasks",
+          "Working with TypeScript/React/Next.js, using GitHub (issues, PRs)",
+        ],
+        timespan: "2024–2025, ~5h/week",
+      },
+      {
+        title: "Full-time Board Member",
+        company: "D.S.J.V. Groover, Delft",
+        description: "Full-time position as Internal Affairs Commissioner (‘Jazz Commissioner’) and Vice Treasurer. " +
+          "In addition to being responsible for most activities and the association’s musical identity, " +
+          "I contributed as Vice Treasurer to a large-scale reform of the financial systems, " +
+          "including a change in VAT status and an overhaul of the direct debit system.",
+        skills: [
+          "Supervising committees",
+          "Communicating with third parties",
+          "Financial oversight",
+        ],
+        timespan: "2023–2024, ~50h/week",
+      },
+      {
+        title: "Member of Recruitment/Activities Committees",
+        company: "D.S.J.V. Groover, Delft",
+        description: "Organized events as secretary of the recruitment committee (OWeeCie) and chair " +
+          "of the activities committee (Jassie). " +
+          "The OWeeCie organizes, among other things, a five-day festival in August with evening performances on a pontoon boat. " +
+          "The Jassie is responsible for the weekly social event (with music setup!).",
+        skills: [
+          "Structured meetings",
+          "Setting priorities and delegating",
+          "Event organization",
+        ],
+        timespan: "2021–2023, 10–20h/week",
+      },
+      {
+        title: "Tutor",
+        company: "Lyceo, Leiden / Private, West-Friesland",
+        description: "Tutoring using prescribed exercises and personalized explanations, both individually and in groups. " +
+          "For tutoring company Lyceo, I led a program ('Lyceo Opstap') for CITO exam prep for " +
+          "a group of five 8th graders (12-year-olds); the program was prematurely terminated in March 2020 due to COVID. " +
+          "During the pandemic, I gave private exam prep sessions to high school students.",
+        skills: [
+          "Carefully guiding students",
+          "Preparing lesson materials",
+          "Holding a cup of coffee like a real teacher during recess",
+        ],
+        timespan: "2019–2020, ~3h/week",
+      },
+      {
+        title: "Sales Assistant",
+        company: "Vomar, Venhuizen",
+        description: "Performed standard supermarket tasks (restocking shelves, cashier, etc.), " +
+          "with friendly customer service and responsibility for my department on busy days.",
+        skills: [
+          "Working hard",
+          "Customer communication",
+          "Ensuring tasks are completed on time",
+        ],
+        timespan: "2017–2021, ~18h/week",
+      },
+    ],
+  },
 };
 
 
 export function ExperienceBlock({ locale }: { locale: Locale }) {
   // Get dictionary
-  const dict = D.nl;//[locale];
+  const dict = D[locale];
 
   return (<>
     <Block className='pr-10'>

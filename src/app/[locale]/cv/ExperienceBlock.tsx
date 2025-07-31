@@ -7,52 +7,70 @@ const D = {
     title: "Ervaring",
     experiences: [
       {
-        title: "Voltijd bestuurslid",
+        title: "Voorzitter websitecommissie (WebCie)",
         company: "D.S.J.V. Groover, Delft",
-        description: "Voor de Delftse Studenten Jazz Vereniging Groover heb ik een jaar vrijwillig voltijd " +
-          "bestuurlijke taken uitgevoerd als commissaris intern, de zogenaamde 'jazzcommissaris', en vice-penningmeester. " +
-          "Buiten mijn vaste taken, waaronder verantwoordelijkheid voor het gros van de activiteiten en de muzikale " +
-          "identiteit van de vereniging, werkte ik als vice-penningmeester mee aan een grootschalige hervorming van de " +
-          "financiele systemen die de vereniging gebruikte (waaronder een wissel van de BTW-status, en een hernieuwde " +
-          "'turftablet' voor gebruik achter de bar).",
+        description: "Met de commissie (7 pers.) gewerkt aan betere codekwaliteit en documentatie van een " +
+          "nét iets te gehaast gelanceerde website.",
         skills: [
-          "...",
+          "Software development in praktisch teamverband",
+          "Opstellen en verdelen van development- en designtaken",
+          "Werken in TypeScript/React/Next.js, met GitHub (issues, PRs)",
         ],
-        timespan: "2023-2024",
+        timespan: "2024-2025, ±5h/week",
       },
       {
-        title: "Websitecommissielid",
+        title: "Voltijd bestuurslid",
         company: "D.S.J.V. Groover, Delft",
-        description: "Op 20 maart 2024 (toen ik nog bestuurslid was), werd een hernieuwde website van de vereniging gelanceerd. " +
-          "Hoewel deze site zeker een verbetering was, was er vrijwel meteen een hoog niveau aan technical debt en " +
-          "functionaliteit die niet geheel zoals gewenst werkte. " +
-          "Vrijwel meteen na mijn decharge ben ik in de websitecommissie gegaan om deze dingen op te lossen. " +
-          "Als voorzitter heb ik de commissie aangestuurd om code-kwaliteit en -hergebruik te verbeteren, " +
-          "en op eigen initiatief heb ik veel elementen en pagina's herzien en opgeknapt.",
+        description: "Voltijdsfunctie als commissaris intern (‘jazzcommissaris’) en vice-penningmeester. " +
+          "Naast verantwoordelijkheid voor de meeste activiteiten en de muzikale identiteit van de vereniging, " +
+          "droeg ik als vice-penningmeester bij aan een grootschalige hervorming van de financiële systemen, " +
+          "waaronder een BTW-statuswijziging en vernieuwing van het incassosysteem.",
         skills: [
-          "...",
+          "Begeleiding van commissies",
+          "Communicatie met derde partijen",
+          "Financieel overzicht",
         ],
-        timespan: "2024-2025",
+        timespan: "2023-2024, ±50u/week",
+      },
+      {
+        title: "Lid werving-/activiteitencommissie",
+        company: "D.S.J.V. Groover, Delft",
+        description: "Organiseren van evenementen als secretaris van de wervingscommissie (OWeeCie) en voorzitter " +
+          "van de activiteitencommissie (Jassie). " +
+          "De OWeeCie verzorgt o.a. een vijfdaags festival in augustus met avondoptredens op een pontonboot. " +
+          "De Jassie is o.a. verantwoordelijk voor onze wekelijkse borrel.",
+        skills: [
+          "Gestructureerd vergaderen",
+          "Prioriteiten stellen en delegeren",
+          "Evenementen organiseren",
+        ],
+        timespan: "2021-2023, 10-20u/week",
       },
       {
         title: "Bijlesbegeleider",
-        company: "Lyceo, Leiden",
-        description: "Voor bijlesbedrijf Lyceo heb ik een traject uitgevoerd ('Lyceo Opstap') voor CITO-training voor " +
-          "een groepje van 5 groep 8'ers. De lessen bestonden uit voorgeschreven (groeps- en individuele) oefeningen, " +
-          "evenals uitleg in groepsverband.",
+        company: "Lyceo, Leiden / Privé, West-Friesland",
+        description: "Bijles geven met voorgeschreven oefeningen en uitleg op maatwerk, zowel individueel als in groepsverband. " +
+          "Voor bijlesbedrijf Lyceo heb ik een traject uitgevoerd ('Lyceo Opstap') voor CITO-training voor " +
+          "een groepje van 5 groep 8'ers (het traject is in maart 2020 afgelast vanwege corona). " +
+          "Tijdens de coronaperiode heb ik via privécontacten examentraining gegeven aan middelbare scholieren.",
         skills: [
-          "...",
+          "Zorgvuldig begeleiden van leerlingen",
+          "Lesmateriaal voorbereiden",
+          "Als een echte leraar een kop koffie vasthouden tijdens buitenspeel-tijd"
         ],
-        timespan: "2019-2020",
+        timespan: "2019-2020, ±3u/week",
       },
       {
         title: "Verkoopmedewerker",
         company: "Vomar, Venhuizen",
-        description: "Beschrijving",
+        description: "Uitvoeren van standaard supermarktwerkzaamheden (vakkenvullen, kassa, etc.), " +
+          "met klantvriendelijke service en verantwoordelijkheid voor mijn afdeling op drukke dagen.",
         skills: [
-          "...",
+          "Hard werken",
+          "Communicatie met klanten",
+          "Toezien dat taken op tijd af zijn",
         ],
-        timespan: "2017-2021",
+        timespan: "2017-2021, ±18u/week",
       },
     ]
   }

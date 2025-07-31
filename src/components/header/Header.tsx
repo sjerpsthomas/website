@@ -8,13 +8,25 @@ import {twMerge} from "tailwind-merge";
 const socials = {
   linkedIn: {
     name: "LinkedIn",
-    username: 'thomassjerps ofzo',
-    href: "google.com",
+    username: '/in/thomas-sjerps',
+    href: "https://www.linkedin.com/in/thomas-sjerps/",
   },
   gitHub: {
     name: "GitHub",
-    username: 'thomassjerps ofzo',
-    href: "https://github.com/gitHub",
+    username: '/sjerpsthomas',
+    href: "https://github.com/sjerpsthomas",
+  },
+
+  // Phone number and email are handled with environment variables
+  telephone: process.env.PHONE === undefined ? undefined : {
+    name: "Tel.",
+    username: process.env.PHONE,
+    href: undefined,
+  },
+  email: process.env.EMAIL === undefined ? undefined : {
+    name: "Email",
+    username: process.env.EMAIL,
+    href: `mailto:${process.env.EMAIL}`,
   }
 }
 
@@ -48,12 +60,15 @@ export function Header({locale, currentPage}: {locale: Locale, currentPage: Curr
 
         {/* Socials */}
         {
-          getDictKeys(dict.socials).map(it =>
-            <p key={it}>
-              {dict.socials[it].name}
-              {': '}
-              <a href={dict.socials[it].href}>{dict.socials[it].username}</a>
-            </p>
+          getDictKeys(dict.socials).map(it => {
+            if (dict.socials[it] === undefined) return;
+
+            return (<p key={it}>
+                {dict.socials[it].name}
+                {': '}
+                <a href={dict.socials[it].href}>{dict.socials[it].username}</a>
+              </p>);
+            }
           )
         }
 

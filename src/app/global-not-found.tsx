@@ -1,11 +1,14 @@
 import './globals.css'
 import {Comic_Neue} from "next/font/google";
 import {twMerge} from "tailwind-merge";
+import type {Metadata} from "next";
 
 const font = Comic_Neue({
   subsets: ['latin'],
   weight: '400',
 });
+
+export const metadata: Metadata = { title: "404" };
 
 export default async function NotFoundPage() {
   return (

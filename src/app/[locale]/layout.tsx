@@ -10,10 +10,7 @@ const font = Inter({
   subsets: ['latin'],
 })
 
-export const metadata: Metadata = {
-  title: "Website!",
-  description: "TODO: verbeteren",
-};
+export const metadata: Metadata = { title: "Thomas Sjerps" };
 
 export default async function RootLayout({
   children,

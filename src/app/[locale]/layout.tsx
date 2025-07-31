@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Roboto_Flex } from "next/font/google";
 import "../globals.css";
 import {NextIntlClientProvider, hasLocale} from 'next-intl';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
 import {twMerge} from "tailwind-merge";
 
-const font = Inter({
+const font = Roboto_Flex({
   subsets: ['latin'],
+  axes: ['wdth']
 })
 
 export const metadata: Metadata = { title: "Thomas Sjerps" };

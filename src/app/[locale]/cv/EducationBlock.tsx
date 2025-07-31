@@ -1,6 +1,5 @@
 import {Locale} from "@/i18n/routing";
 import {Block} from "@/components/Block";
-import {BulletPointList} from "@/components/BulletPointList";
 
 
 const D = {

@@ -6,12 +6,15 @@
 @layer base {
   h1 {
     @apply text-2xl md:text-5xl print:text-xl font-bold mb-2 print:mb-1 md:mb-4;
+    font-variation-settings: 'wdth' 140;
   }
   h2 {
     @apply text-xl md:text-xl print:text-base/5 font-bold;
+    font-variation-settings: 'wdth' 110;
   }
   p, li, span, div {
-    @apply print:text-[0.6rem]/2.75 text-sm md:text-base;
+    @apply print:text-[0.65rem]/2.75 text-sm md:text-base;
+    @media print { font-variation-settings: 'wdth' 50; }
     /*@apply text-blue-500;*/
   }
 }

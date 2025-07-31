@@ -9,8 +9,8 @@ const D = {
       {
         title: "Voorzitter websitecommissie (WebCie)",
         company: "D.S.J.V. Groover, Delft",
-        description: "Met de commissie (7 pers.) gewerkt aan betere codekwaliteit en documentatie van een " +
-          "nét iets te gehaast gelanceerde website.",
+        description: "Met de commissie (7 pers.) gewerkt aan betere codekwaliteit, documentatie, en mooier design " +
+          "voor een nét iets te gehaast gelanceerde website.",
         skills: [
           "Software development in praktisch teamverband",
           "Opstellen en verdelen van development- en designtaken",
@@ -38,7 +38,7 @@ const D = {
         description: "Organiseren van evenementen als secretaris van de wervingscommissie (OWeeCie) en voorzitter " +
           "van de activiteitencommissie (Jassie). " +
           "De OWeeCie verzorgt o.a. een vijfdaags festival in augustus met avondoptredens op een pontonboot. " +
-          "De Jassie is o.a. verantwoordelijk voor onze wekelijkse borrel.",
+          "De Jassie is o.a. verantwoordelijk voor de wekelijkse borrel (met muziekopstelling!).",
         skills: [
           "Gestructureerd vergaderen",
           "Prioriteiten stellen en delegeren",

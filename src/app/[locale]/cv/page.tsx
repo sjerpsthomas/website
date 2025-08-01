@@ -8,10 +8,12 @@ import {EducationBlock} from "@/app/[locale]/cv/EducationBlock";
 
 const D = {
   nl: {
+    title: "CV",
     factDigital: "Leuk feitje: als je deze pagina print, krijg je mijn echte CV!",
     factPrint: "Leuk feitje: deze pagina is een afdruk van thomassjerps.nl/cv!"
   },
   en: {
+    title: "CV",
     factDigital: "Fun fact: if you print this page, you get my actual CV!",
     factPrint: "Fun fact: this page is a print-out of thomassjerps.nl/cv!"
   },
@@ -32,6 +34,8 @@ export default async function CVPage({ params }: { params: Promise<{ locale: str
 
       {/* Content */}
       <main>
+        <h1 className='text-center mt-5 print:hidden'>{dict.title}</h1>
+
         <div className='flex flex-wrap justify-stretch items-stretch'>
           {/* Education / Abilities */}
           <div className='flex-1 flex flex-col print:w-[40%]'>

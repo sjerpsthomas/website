@@ -1,6 +1,7 @@
 import {Header} from "@/components/header/Header";
 import {Locale} from "@/i18n/routing";
 import {Footer} from "@/components/Footer";
+import {PortfolioBlock} from "@/app/[locale]/portfolio/PortfolioBlock";
 
 
 const D = {
@@ -27,7 +28,9 @@ export default async function PortfolioPage({ params }: { params: Promise<{ loca
 
       {/* Content */}
       <main>
-        {/* TODO */}
+        {/* TODO: filter */}
+
+        <PortfolioBlock locale={locale}/>
       </main>
 
       {/* Printout comment */}

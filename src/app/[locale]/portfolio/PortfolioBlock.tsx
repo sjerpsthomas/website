@@ -10,128 +10,127 @@ const D = {
       {
         title: "thomassjerps.nl",
         subtitle: "Deze website!",
-        image: undefined,
-        description: "Ik heb deze website even in elkaar geknald.",
+        image: "/thomassjerps_nl.png",
+        description: "TODO: beschrijving",
         links: [],
       },
       {
         title: "Masterscriptie",
         subtitle: "Godot, C#, Python",
-        image: undefined,
-        description: "",
+        image: "/masterscriptie.jpg",
+        description: "TODO: beschrijving",
         links: [],
       },
       {
         title: "Bartablet",
         subtitle: "",
-        image: undefined,
-        description: "",
+        image: "/bartablet.png",
+        description: "TODO: beschrijving",
         links: [],
       },
       {
         title: "grooverjazz.nl",
         subtitle: "",
-        image: undefined,
-        description: "",
+        image: "/grooverjazz_nl.png",
+        description: "TODO: beschrijving",
         links: [],
       },
       {
         title: "Videospelletjes!",
         subtitle: "",
-        image: undefined,
-        description: "",
+        image: "/videospelletjes.png",
+        description: "TODO: beschrijving",
         links: [],
       },
       {
         title: "Minor: Topus",
         subtitle: "",
-        image: undefined,
-        description: "",
+        image: "/minor_topus.png",
+        description: "TODO: beschrijving",
         links: [],
       },
       {
         title: "Minor: Nenzo",
         subtitle: "",
-        image: undefined,
-        description: "",
+        image: "/minor_nenzo.png",
+        description: "TODO: beschrijving",
         links: [],
       },
       {
         title: "Minor: Reflect",
         subtitle: "",
-        image: undefined,
-        description: "",
+        image: "/minor_reflect.jpg",
+        description: "TODO: beschrijving",
         links: [],
       },
       {
         title: "Software Project",
         subtitle: "",
-        image: undefined,
-        description: "",
+        image: "/software_project.png",
+        description: "TODO: beschrijving",
         links: [],
       },
       {
         title: "Bachelorscriptie",
         subtitle: "",
-        image: undefined,
-        description: "",
+        image: "/bachelor_scriptie.png",
+        description: "TODO: beschrijving",
         links: [],
       },
       {
         title: "Educool",
         subtitle: "",
-        image: undefined,
-        description: "",
+        image: "/educool.png",
+        description: "TODO: beschrijving",
         links: [],
       },
-      {
-        title: "HelixxVR",
-        subtitle: "",
-        image: undefined,
-        description: "",
-        links: [],
-      },
+      // {
+      //   title: "HelixxVR",
+      //   subtitle: "",
+      //   image: undefined,
+      //   description: "",
+      //   links: [],
+      // },
       {
         title: "bit.ly/niksaandehand",
         subtitle: "",
-        image: undefined,
-        description: "",
+        image: "/niksaandehand.png",
+        description: "TODO: beschrijving",
         links: [],
       },
-      {
-        title: "Fotografie",
-        subtitle: "",
-        image: undefined,
-        description: "",
-        links: [],
-      },
+      // {
+      //   title: "Fotografie",
+      //   subtitle: "",
+      //   image: undefined,
+      //   description: "",
+      //   links: [],
+      // },
       {
         title: "Groover Real Book",
         subtitle: "",
-        image: undefined,
-        description: "",
+        image: "/realbook.png",
+        description: "TODO: beschrijving",
         links: [],
       },
       {
         title: "Groover Top 2-Jazzend",
         subtitle: "",
-        image: undefined,
-        description: "",
+        image: "/top_2_jazzend.png",
+        description: "TODO: beschrijving",
         links: [],
       },
       {
         title: "Jaarboek",
         subtitle: "",
-        image: undefined,
-        description: "",
+        image: "/jaarboek.png",
+        description: "TODO: beschrijving",
         links: [],
       },
-
       {
-        title: "Connect 4",
+        title: "extremec4",
         subtitle: "",
-        image: undefined,
-        description: "",
+        image: "/extremec4.png",
+        description: "TODO: beschrijving",
         links: [],
       },
 
@@ -151,13 +150,11 @@ export function PortfolioBlock({
   // Get dictionary
   const dict = D.nl;//[locale];
 
-
-
   return (<>
     <div className='flex flex-col items-center mt-5'>
       <h1>{dict.title}</h1>
 
-      <Block className='w-full md:w-[60%] md:min-w-[35rem]'>
+      <Block className='w-full md:w-[50%] md:min-w-[35rem]'>
         {
           dict.items.map((item, index) => {
               const flip = index % 2 == 0;

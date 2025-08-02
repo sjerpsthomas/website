@@ -39,7 +39,7 @@ export function CallbackBlock({
 }: Readonly<BlockProps & {onClick: () => void}>) {
   return (
     <button onClick={onClick}>
-      <Block className={twMerge('bg-blue-900 hover:scale-105 transition-transform', className)}>
+      <Block className={twMerge('cursor-pointer bg-blue-900 hover:scale-105 transition-transform', className)}>
         {children}
       </Block>
     </button>

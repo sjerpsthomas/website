@@ -400,10 +400,12 @@ const D = {
   nl: {
     title: "Portfolio",
     items: I.map(item => localize(item, "nl")),
+    tagError: "Incorrecte tag ingevoerd. Hoe krijg je dat voor elkaar?",
   },
   en: {
     title: "Portfolio",
     items: I.map(item => localize(item, "en")),
+    tagError: "Incorrect tag specified. How'd you get that to happen?",
   },
 }
 
@@ -428,6 +430,9 @@ export function PortfolioBlock({
 }
 
 function FilterAndItems({locale} : {locale: Locale}) {
+  // Get dictionary
+  const dict = D[locale];
+
   // Define filter state
   const [currentTag, setCurrentTag] = useQueryParam('tag', withDefault(StringParam, 'all'));
 
@@ -438,6 +443,9 @@ function FilterAndItems({locale} : {locale: Locale}) {
 
       {/* Items */}
       <Block className='flex flex-col gap-y-10'>
+        {/* Tag error */}
+        { ['all', ...allTags].includes(currentTag) || <div>{dict.tagError}</div> }
+
         <PortfolioItems locale={locale} currentTag={currentTag as (Tag | 'all')}/>
       </Block>
     </div>

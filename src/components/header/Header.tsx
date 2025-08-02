@@ -76,7 +76,7 @@ export function Header({locale, currentPage}: {locale: Locale, currentPage: Curr
     </header>
 
     {/* Nav bar */}
-    <nav className='w-full flex flex-wrap justify-center not-md:py-1 sticky top-2 rounded-xl md:rounded-3xl bg-[#00000088] backdrop-blur-lg print:hidden'>
+    <nav className='w-full z-10 flex flex-wrap justify-center not-md:py-1 sticky top-2 rounded-xl md:rounded-3xl bg-[#00000088] backdrop-blur-lg print:hidden'>
       {/* Language switcher */}
       <LocaleToggle/>
 

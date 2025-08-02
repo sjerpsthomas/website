@@ -379,7 +379,7 @@ const I: UnlocalizedItem[] = [
   {
     title: { nl: "Stagemanager", en: "Stagemanager" },
     subtitle: { nl: "Verantwoordelijkheid bij (middel-)groot festival", en: "Responsibilities during (medium) large festival" },
-    image: undefined,
+    image: "/stagemanager.jpg",
     tags: ["team", "hobby"],
     description: {
       nl: "Ik ben in 2023 en 2024 stagemanager geweest voor het jaarlijkse festival van onze vereniging: 'Just Jazz'. " +

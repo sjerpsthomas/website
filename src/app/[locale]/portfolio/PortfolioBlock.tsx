@@ -1,11 +1,10 @@
 ﻿'use client'
 
-import {Block, CallbackBlock, LinkBlock} from "@/components/Block";
+import {Block, CallbackBlock} from "@/components/Block";
 import {twMerge} from "tailwind-merge";
 import {Locale} from "@/i18n/routing";
-import {useCallback, useState} from "react";
+import {useEffect, useState} from "react";
 import _ from "lodash";
-import {useSearchParams} from "next/navigation";
 import {QueryParamProvider, StringParam, useQueryParam, withDefault} from "use-query-params";
 import NextAdapterApp from "next-query-params/app";
 
@@ -381,12 +380,12 @@ function FilterAndItems({locale} : {locale: Locale}) {
   const [currentTag, setCurrentTag] = useQueryParam('tag', withDefault(StringParam, 'all'));
 
   return (<>
-    <div className='flex flex-col items-center'>
+    <div className='w-full md:w-[60%] md:min-w-[35rem] flex flex-col items-center'>
       {/* Filter */}
       <Filter locale={locale} currentTag={currentTag as (Tag | 'all')} setCurrentTag={setCurrentTag} />
 
       {/* Items */}
-      <Block className='w-full md:w-[60%] md:min-w-[35rem] flex flex-col gap-y-10'>
+      <Block className='flex flex-col gap-y-10'>
         <PortfolioItems locale={locale} currentTag={currentTag as (Tag | 'all')}/>
       </Block>
     </div>
@@ -398,12 +397,25 @@ function Filter({
 }: { locale: Locale, currentTag: Tag | 'all', setCurrentTag: (newCurrentTag: Tag | 'all') => void }) {
   const buttonTags: (Tag | 'all')[] = (['all', ...allTags])
 
+  const getHeight = () =>
+    (document.getElementById('HEADER-NAV-BAR') as HTMLDivElement).getBoundingClientRect().height;
+
+  const [height, setHeight] = useState(0)
+
+  useEffect(() => {
+    setHeight(getHeight());
+  }, [])
+
+  addEventListener('resize', () => {
+    setHeight(getHeight());
+  })
+
   return (
-    <div className="flex flex-wrap justify-center print:hidden">
+    <div className="flex flex-wrap justify-center print:hidden sticky" style={{ top: `calc(${height}px + 1rem)` }}>
       {
         buttonTags.map((tag, tagIndex) =>
           <CallbackBlock key={tagIndex}
-                         className={twMerge(currentTag == tag ? "bg-amber-300 text-black" : "bg-black", "md:py-3 shadow-lg")}
+                         className={twMerge(currentTag == tag ? "bg-amber-300 text-black" : "bg-black", "md:py-3 md:m-1 shadow-lg")}
                          onClick={() => {
                            setCurrentTag(currentTag == tag ? 'all' : tag);
                          }}>

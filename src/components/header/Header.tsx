@@ -76,24 +76,24 @@ export function Header({locale, currentPage}: {locale: Locale, currentPage: Curr
     </header>
 
     {/* Nav bar */}
-    <nav id='HEADER-NAV-BAR' className='w-full flex flex-wrap justify-center sticky top-0 rounded-xl md:rounded-3xl bg-[#00000088] backdrop-blur-lg print:hidden'>
+    <nav id='HEADER-NAV-BAR' className='w-full flex flex-wrap justify-center sticky top-2 rounded-xl md:rounded-3xl bg-[#00000088] backdrop-blur-lg print:hidden'>
       {/* Language switcher */}
       <LocaleToggle/>
 
       {/* Other buttons */}
       <div className="flex flex-wrap justify-center">
         {/* Home */}
-        <LinkBlock className="w-[6rem] md:w-[8rem] md:py-3 shadow-lg" href='/'>
+        <LinkBlock className="w-[5rem] md:w-[8rem] md:py-3 shadow-lg" href='/'>
           <p className={twMerge('text-center', currentPage == 'home' && 'font-bold underline')}>Home</p>
         </LinkBlock>
 
         {/* CV */}
-        <LinkBlock className="w-[6rem] md:w-[8rem] md:py-3 shadow-lg" href='/cv'>
+        <LinkBlock className="w-[5rem] md:w-[8rem] md:py-3 shadow-lg" href='/cv'>
           <p className={twMerge('text-center', currentPage == 'cv' && 'font-bold underline')}>CV</p>
         </LinkBlock>
 
         {/* Portfolio */}
-        <LinkBlock className="w-[6rem] md:w-[8rem] md:py-3 shadow-lg" href='/portfolio'>
+        <LinkBlock className="w-[5rem] md:w-[8rem] md:py-3 shadow-lg" href='/portfolio'>
           <p className={twMerge('text-center', currentPage == 'portfolio' && 'font-bold underline')}>Portfolio</p>
         </LinkBlock>
       </div>

@@ -56,33 +56,41 @@ function localize(item: UnlocalizedItem, locale: Locale): LocalizedItem {
 const I: UnlocalizedItem[] = [
   {
     title: { nl: "thomassjerps.nl", en: "thomassjerps.nl" },
-    subtitle: { nl: "Deze website!", en: "This website!" },
+    subtitle: { nl: "React, TypeScript, Next.js", en: "Website using React, TypeScript, Next.js" },
     image: "/thomassjerps_nl.png",
     tags: ["solo", "programming"],
     description: {
-      nl: "TODO",
+      nl: "In de zomer van 2025 heb ik deze website gemaakt om mijn CV en portfolio in te zetten. Dit is 'm!",
       en: "TODO"
     },
-    links: [],
+    links: [
+      { text: { nl: "Repository", en: "Repository" }, href: "https://www.github.com/sjerpsthomas/website" },
+    ],
   },
   {
     title: { nl: "Masterscriptie", en: "Master's thesis" },
-    subtitle: { nl: "Godot, C#, Python", en: "Godot, C#, Python" },
+    subtitle: { nl: "Onderzoeksproject in Godot/C#, React/TS, Python", en: "Research project using Godot/C#, React/TS, Python" },
     image: "/masterscriptie.jpg",
     tags: ["solo", "programming", "uni"],
     description: {
-      nl: "TODO",
+      nl: "Van november 2024 tot juli 2025 heb ik onderzoek verricht voor mijn masterscriptie. " +
+        "Ik heb verschillende algoritmen voor muziekgeneratie ('trading fours') geïmplementeerd en vergeleken " +
+        "door middel van een zelf-verzonnen onderzoeksberaming, met zelf-beoordeling, beoordeling door derde partijen " +
+        "en poging tot oordeel door middel van statistische technieken.",
       en: "TODO"
     },
     links: [],
   },
   {
     title: { nl: "Bartablet", en: "Bar tablet" },
-    subtitle: { nl: "", en: "" },
+    subtitle: { nl: "Een app om biertjes mee te bestellen in Kotlin/Jetpack Compose", en: "" },
     image: "/bartablet.png",
     tags: ["solo", "programming", "association"],
     description: {
-      nl: "TODO",
+      nl: "Bij mijn vereniging worden tijdens een borrel biertjes 'geturfd' en achteraf per incasso betaald. " +
+        "De vorige turf-app was slecht bruikbaar en on-onderhoudbaar. " +
+        "In 2024 heb ik een nieuwe app gemaakt in Jetpack Compose die beter werkt, met zicht op de toekomst en " +
+        "integratie met de (door ons gemoderniseerde) ledenadmin-, boekhoud- en incassoworkflow.",
       en: "TODO"
     },
     links: [],
@@ -93,29 +101,37 @@ const I: UnlocalizedItem[] = [
     image: "/grooverjazz_nl.png",
     tags: ["team", "programming", "association"],
     description: {
-      nl: "TODO",
+      nl: "In 2024 is een nieuwe website van mijn vereniging gelanceerd. De launch was overhaast gedaan, en dit " +
+        "zorgde voor sub-par codekwaliteit en documentatie. In 2024-2025 heb ik veel pagina's beter op een lijn " +
+        "geplaatst met het Figma-ontwerp, heb ik de zoekfunctie van een van de pagina's op de schop gegooid en " +
+        "integratie met formulieren van de nieuwe ledenadministratie gefaciliteerd.",
       en: "TODO"
     },
     links: [],
   },
   {
     title: { nl: "Videospelletjes!", en: "Video games!" },
-    subtitle: { nl: "", en: "" },
+    subtitle: { nl: "GameMaker, Godot, Unity", en: "GameMaker, Godot, Unity" },
     image: "/videospelletjes.png",
     tags: ["solo", "programming", "hobby"],
     description: {
-      nl: "TODO",
+      nl: "Al sinds ik kind ben, ben ik geïnteresseerd in het maken van spelletjes. Ik ben mijn programmeercarrière " +
+        "begonnen in GameMaker, en daar heb ik tot m'n 19e veel hobbyprojecten en game jams mee gedaan. " +
+        "Later heb ik veel andere frameworks uitgeprobeerd (MonoGame, LWJGL) en ben ik doorgegaan met Godot. " +
+        "De screenshot is van 'The Pironaut', hier heb ik een game jam mee gewonnen!",
       en: "TODO"
     },
     links: [],
   },
   {
     title: { nl: "Minor: Topus", en: "Minor: Topus" },
-    subtitle: { nl: "", en: "" },
+    subtitle: { nl: "Interactief 'dier' in CircuitPython", en: "" },
     image: "/minor_topus.png",
     tags: ["team", "programming", "uni"],
     description: {
-      nl: "TODO",
+      nl: "Voor het eerste project van mijn minor Interactive Environments (bij Industrieel Ontwerpen van de TU) " +
+        "moesten we in groepjes van 2 een soort 'dier' maken van buigbaar plastic, en sensoren en motoren in verwerken. " +
+        "'Topus' reageert op hoe ver je van 'm af bent door steeds vaker en luider te gillen.",
       en: "TODO"
     },
     links: [],
@@ -126,7 +142,10 @@ const I: UnlocalizedItem[] = [
     image: "/minor_nenzo.png",
     tags: ["team", "programming", "uni"],
     description: {
-      nl: "TODO",
+      nl: "Het tweede deel van de minor bestond uit een grotere interactieve installatie, wederom in groepjes van 2. " +
+        "De casus: de Koninklijke Bibliotheek in Den Haag wil meer mensen van buiten betrekken. " +
+        "De oplossing: 'Nenzo' bestaat uit een oppervlak met kijkgaten, waar een bezoeker nieuwsverhalen kan zien. " +
+        "Deze verhalen komen (door middel van een motortje en lus touw) steeds dichter bij de bezoeker.",
       en: "TODO"
     },
     links: [],
@@ -289,22 +308,6 @@ const D = {
 }
 
 
-export function useTagFilter() {
-  const searchParams = useSearchParams();
-
-  const createQueryString = useCallback(
-    (name: string, value: string) => {
-      const params = new URLSearchParams(searchParams.toString())
-      params.set(name, value)
-
-      return params.toString()
-    },
-    [searchParams]
-  )
-
-
-}
-
 export function PortfolioBlock({
   locale,
 }: { locale: Locale }) {
@@ -329,7 +332,7 @@ function FilterAndItems({locale} : {locale: Locale}) {
   const [currentTag, setCurrentTag] = useQueryParam('tag', withDefault(StringParam, 'all'));
 
   return (<>
-    <div className='flex flex-col items-center mt-5'>
+    <div className='flex flex-col items-center'>
       {/* Filter */}
       <Filter locale={locale} currentTag={currentTag as (Tag | 'all')} setCurrentTag={setCurrentTag} />
 
@@ -351,7 +354,7 @@ function Filter({
       {
         buttonTags.map((tag, tagIndex) =>
           <CallbackBlock key={tagIndex}
-                         className={twMerge(currentTag != tag ? "bg-black" : "bg-amber-300 text-black", "md:py-3 shadow-lg")}
+                         className={twMerge(currentTag == tag ? "bg-amber-300 text-black" : "bg-black", "md:py-3 shadow-lg")}
                          onClick={() => {
                            setCurrentTag(currentTag == tag ? 'all' : tag);
                          }}>
@@ -383,21 +386,30 @@ function PortfolioItems({
                className='w-full mb-4 object-cover rounded-xl shadow-heavy'/>
 
           {/* Title and tags */}
-          <div className='flex flex-wrap justify-between items-center'>
+          <div className='flex flex-col print:flex-row print:flex-wrap justify-between gap-y-1 mb-2'>
             <h2>{item.title}</h2>
             <div className='pl-5 flex flex-wrap gap-x-3 gap-y-1'>
-                {item.tags.map((tag, tagIndex) =>
-                  <div key={tagIndex} className='bg-[#151515] px-2 py-1 rounded-lg'>{localizedTags[tag][locale]}</div>
-                )}
-              </div>
+              {item.tags.map((tag, tagIndex) =>
+                <div key={tagIndex} className='bg-[#151515] px-2 py-1 rounded-lg shadow-md'>{localizedTags[tag][locale]}</div>
+              )}
             </div>
-
-            <p className='pl-5 italic mb-1'>{item.subtitle}</p>
-
-            <p>{item.description}</p>
           </div>
-        </section>
-      );
-    }
-  )
+
+          <p className='pl-5 italic mb-1'>{item.subtitle}</p>
+
+          <p>{item.description}</p>
+
+          {
+            item.links.length > 0 && <div className='mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 print:hidden'>
+              <p>Links:</p>
+              {item.links.map((link, tagIndex) =>
+                <a key={tagIndex} href={link.href}
+                   className='bg-blue-900 px-2 py-1 rounded-lg shadow-md hover:scale-105 transition-transform'>{link.text}</a>
+              )}
+            </div>
+          }
+        </div>
+      </section>
+    );
+  });
 }

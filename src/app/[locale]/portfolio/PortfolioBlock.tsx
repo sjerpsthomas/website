@@ -92,19 +92,40 @@ const D = {
       //   links: [],
       // },
       {
+        title: "Tiewrap",
+        subtitle: "",
+        image: "/tiewrap.jpg",
+        description: "TODO: beschrijving",
+        links: [],
+      },
+      {
+        title: "Once More",
+        subtitle: "",
+        image: "/once_more.jpg",
+        description: "TODO: beschrijving",
+        links: [],
+      },
+      {
+        title: "Invaller/gelegenheids-gigs",
+        subtitle: "",
+        image: "/invallen.jpg",
+        description: "TODO: beschrijving",
+        links: [],
+      },
+      {
         title: "bit.ly/niksaandehand",
         subtitle: "",
         image: "/niksaandehand.png",
         description: "TODO: beschrijving",
         links: [],
       },
-      // {
-      //   title: "Fotografie",
-      //   subtitle: "",
-      //   image: undefined,
-      //   description: "",
-      //   links: [],
-      // },
+      {
+        title: "Fotografie",
+        subtitle: "",
+        image: undefined,
+        description: "Ironisch dat ik hier nog geen foto bij heb, hè?",
+        links: [],
+      },
       {
         title: "Groover Real Book",
         subtitle: "",
@@ -160,7 +181,7 @@ export function PortfolioBlock({
               const flip = index % 2 == 0;
 
               return (
-                <section key={index} className=''>
+                <section key={item.title} className=''>
                   <div className={twMerge('w-[90%] md:w-[60%] p-5', flip && 'ml-auto')}>
                     <img src={item.image ?? "/foto.png"} alt={undefined} className='w-full mb-4 object-cover rounded-xl shadow-heavy'/>
                     <h2>{item.title}</h2>

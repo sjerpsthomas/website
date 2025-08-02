@@ -1,166 +1,189 @@
 ﻿import {Block} from "@/components/Block";
-import {Locale} from "use-intl";
 import {twMerge} from "tailwind-merge";
+import {Locale} from "@/i18n/routing";
 
+
+type Tag = "solo" | "team" | "business" | "funny" | "uni" | "hobby"
+
+function getItems(locale: Locale) {
+  const I = [
+    {
+      title: { nl: "thomassjerps.nl", en: "thomassjerps.nl" },
+      subtitle: "Deze website!",
+      image: "/thomassjerps_nl.png",
+      tags: [] as Tag[],
+      description: "TODO: beschrijving",
+      links: [],
+    },
+    {
+      title: { nl: "Masterscriptie", en: "Master's thesis" },
+      subtitle: "Godot, C#, Python",
+      image: "/masterscriptie.jpg",
+      tags: [] as Tag[],
+      description: "TODO: beschrijving",
+      links: [],
+    },
+    {
+      title: { nl: "Bartablet", en: "Bar tablet" },
+      subtitle: "",
+      image: "/bartablet.png",
+      tags: [] as Tag[],
+      description: "TODO: beschrijving",
+      links: [],
+    },
+    {
+      title: { nl: "grooverjazz.nl", en: "grooverjazz.nl" },
+      subtitle: "",
+      image: "/grooverjazz_nl.png",
+      tags: [] as Tag[],
+      description: "TODO: beschrijving",
+      links: [],
+    },
+    {
+      title: { nl: "Videospelletjes!", en: "Video games!" },
+      subtitle: "",
+      image: "/videospelletjes.png",
+      tags: [] as Tag[],
+      description: "TODO: beschrijving",
+      links: [],
+    },
+    {
+      title: { nl: "Minor: Topus", en: "Minor: Topus" },
+      subtitle: "",
+      image: "/minor_topus.png",
+      tags: [] as Tag[],
+      description: "TODO: beschrijving",
+      links: [],
+    },
+    {
+      title: { nl: "Minor: Nenzo", en: "Minor: Nenzo" },
+      subtitle: "",
+      image: "/minor_nenzo.png",
+      tags: [] as Tag[],
+      description: "TODO: beschrijving",
+      links: [],
+    },
+    {
+      title: { nl: "Minor: Reflect", en: "Minor: Reflect" },
+      subtitle: "",
+      image: "/minor_reflect.jpg",
+      tags: [] as Tag[],
+      description: "TODO: beschrijving",
+      links: [],
+    },
+    {
+      title: { nl: "Softwareproject", en: "Software Project" },
+      subtitle: "",
+      image: "/software_project.png",
+      tags: [] as Tag[],
+      description: "TODO: beschrijving",
+      links: [],
+    },
+    {
+      title: { nl: "Bachelorscriptie", en: "Bachelor thesis" },
+      subtitle: "",
+      image: "/bachelor_scriptie.png",
+      tags: [] as Tag[],
+      description: "TODO: beschrijving",
+      links: [],
+    },
+    {
+      title: { nl: "Educool", en: "Educool" },
+      subtitle: "",
+      image: "/educool.png",
+      tags: [] as Tag[],
+      description: "TODO: beschrijving",
+      links: [],
+    },
+    {
+      title: { nl: "Band: Tiewrap", en: "Band: Tiewrap" },
+      subtitle: "",
+      image: "/tiewrap.jpg",
+      tags: [] as Tag[],
+      description: "TODO: beschrijving",
+      links: [],
+    },
+    {
+      title: { nl: "Band: Once More", en: "Band: Once More" },
+      subtitle: "",
+      image: "/once_more.jpg",
+      tags: [] as Tag[],
+      description: "TODO: beschrijving",
+      links: [],
+    },
+    {
+      title: { nl: "Invaller/gelegenheids-gigs", en: "Substitute/occasional gigs" },
+      subtitle: "",
+      image: "/invallen.jpg",
+      tags: [] as Tag[],
+      description: "TODO: beschrijving",
+      links: [],
+    },
+    {
+      title: { nl: "bit.ly/niksaandehand", en: "bit.ly/niksaandehand" },
+      subtitle: "",
+      image: "/niksaandehand.png",
+      tags: [] as Tag[],
+      description: "TODO: beschrijving",
+      links: [],
+    },
+    {
+      title: { nl: "Fotografie", en: "Photography" },
+      subtitle: "",
+      image: "/fotografie.png",
+      tags: [] as Tag[],
+      description: "TODO: beschrijving",
+      links: [],
+    },
+    {
+      title: { nl: "Groover Real Book", en: "Groover Real Book" },
+      subtitle: "",
+      image: "/realbook.png",
+      tags: [] as Tag[],
+      description: "TODO: beschrijving",
+      links: [],
+    },
+    {
+      title: { nl: "Groover Top 2-Jazzend", en: "Groover Top 2-Jazzend" },
+      subtitle: "",
+      image: "/top_2_jazzend.png",
+      tags: [] as Tag[],
+      description: "TODO: beschrijving",
+      links: [],
+    },
+    {
+      title: { nl: "Jaarboek", en: "Year book" },
+      subtitle: "",
+      image: "/jaarboek.png",
+      tags: [] as Tag[],
+      description: "TODO: beschrijving",
+      links: [],
+    },
+    {
+      title: { nl: "extremec4", en: "extremec4" },
+      subtitle: "",
+      image: "/extremec4.png",
+      tags: [] as Tag[],
+      description: "TODO: beschrijving",
+      links: [],
+    },
+
+  ]
+
+  return I.map(item => ({
+    ...item,
+    title: item.title[locale],
+  }))
+}
 
 const D = {
   nl: {
     title: "Portfolio",
-    items: [
-      {
-        title: "thomassjerps.nl",
-        subtitle: "Deze website!",
-        image: "/thomassjerps_nl.png",
-        description: "TODO: beschrijving",
-        links: [],
-      },
-      {
-        title: "Masterscriptie",
-        subtitle: "Godot, C#, Python",
-        image: "/masterscriptie.jpg",
-        description: "TODO: beschrijving",
-        links: [],
-      },
-      {
-        title: "Bartablet",
-        subtitle: "",
-        image: "/bartablet.png",
-        description: "TODO: beschrijving",
-        links: [],
-      },
-      {
-        title: "grooverjazz.nl",
-        subtitle: "",
-        image: "/grooverjazz_nl.png",
-        description: "TODO: beschrijving",
-        links: [],
-      },
-      {
-        title: "Videospelletjes!",
-        subtitle: "",
-        image: "/videospelletjes.png",
-        description: "TODO: beschrijving",
-        links: [],
-      },
-      {
-        title: "Minor: Topus",
-        subtitle: "",
-        image: "/minor_topus.png",
-        description: "TODO: beschrijving",
-        links: [],
-      },
-      {
-        title: "Minor: Nenzo",
-        subtitle: "",
-        image: "/minor_nenzo.png",
-        description: "TODO: beschrijving",
-        links: [],
-      },
-      {
-        title: "Minor: Reflect",
-        subtitle: "",
-        image: "/minor_reflect.jpg",
-        description: "TODO: beschrijving",
-        links: [],
-      },
-      {
-        title: "Software Project",
-        subtitle: "",
-        image: "/software_project.png",
-        description: "TODO: beschrijving",
-        links: [],
-      },
-      {
-        title: "Bachelorscriptie",
-        subtitle: "",
-        image: "/bachelor_scriptie.png",
-        description: "TODO: beschrijving",
-        links: [],
-      },
-      {
-        title: "Educool",
-        subtitle: "",
-        image: "/educool.png",
-        description: "TODO: beschrijving",
-        links: [],
-      },
-      // {
-      //   title: "HelixxVR",
-      //   subtitle: "",
-      //   image: undefined,
-      //   description: "",
-      //   links: [],
-      // },
-      {
-        title: "Tiewrap",
-        subtitle: "",
-        image: "/tiewrap.jpg",
-        description: "TODO: beschrijving",
-        links: [],
-      },
-      {
-        title: "Once More",
-        subtitle: "",
-        image: "/once_more.jpg",
-        description: "TODO: beschrijving",
-        links: [],
-      },
-      {
-        title: "Invaller/gelegenheids-gigs",
-        subtitle: "",
-        image: "/invallen.jpg",
-        description: "TODO: beschrijving",
-        links: [],
-      },
-      {
-        title: "bit.ly/niksaandehand",
-        subtitle: "",
-        image: "/niksaandehand.png",
-        description: "TODO: beschrijving",
-        links: [],
-      },
-      {
-        title: "Fotografie",
-        subtitle: "",
-        image: undefined,
-        description: "Ironisch dat ik hier nog geen foto bij heb, hè?",
-        links: [],
-      },
-      {
-        title: "Groover Real Book",
-        subtitle: "",
-        image: "/realbook.png",
-        description: "TODO: beschrijving",
-        links: [],
-      },
-      {
-        title: "Groover Top 2-Jazzend",
-        subtitle: "",
-        image: "/top_2_jazzend.png",
-        description: "TODO: beschrijving",
-        links: [],
-      },
-      {
-        title: "Jaarboek",
-        subtitle: "",
-        image: "/jaarboek.png",
-        description: "TODO: beschrijving",
-        links: [],
-      },
-      {
-        title: "extremec4",
-        subtitle: "",
-        image: "/extremec4.png",
-        description: "TODO: beschrijving",
-        links: [],
-      },
-
-    ]
+    items: getItems("nl"),
   },
   en: {
-    items: [
-
-    ]
+    title: "Portfolio",
+    items: getItems("en"),
   },
 }
 

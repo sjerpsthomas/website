@@ -74,12 +74,12 @@ const I: UnlocalizedItem[] = [
     description: {
       nl: "Van november 2024 tot juli 2025 (30 weken) heb ik een zelf-gekozen onderzoek verricht voor mijn masterscriptie. " +
         "Ik heb verschillende algoritmen voor muziekgeneratie ('trading fours') geïmplementeerd en vergeleken " +
-        "door middel van een zelf-verzonnen onderzoeksberaming, met zelf-beoordeling, beoordeling door derde partijen " +
-        "en poging tot oordeel door middel van statistische technieken.",
+        "door middel van een zelf-opgestelde onderzoeksberaming, waarin spelers zichzelf beoordelen, en er beoordeling door" +
+        " derde partijen en statistische technieken plaatsvindt.",
       en: "From November 2024 to July 2025 (30 weeks), I conducted a self-selected research project for my master's thesis. " +
         "I implemented and compared various music generation algorithms ('trading fours') using a " +
-        "self-devised research framework, which included self-assessment, third-party assessment, " +
-        "and an attempt at assessment using statistical techniques."
+        "self-devised research framework, which included self-assessment of participants, supplemented with " +
+        "third-party assessment, and assessment using statistical techniques."
     },
     links: [],
   },
@@ -91,7 +91,7 @@ const I: UnlocalizedItem[] = [
     description: {
       nl: "Bij mijn vereniging worden drankjes tijdens een borrel 'geturfd' en achteraf per (SEPA-) incasso betaald. " +
         "De vorige turf-app was slecht bruikbaar en on-onderhoudbaar. " +
-        "In 2024 heb ik een nieuwe app gemaakt in Jetpack Compose die beter werkt, met zicht op de toekomst en " +
+        "In 2024 heb ik een nieuwe app gemaakt in Jetpack Compose die hierin verbetert, met zicht op de toekomst en " +
         "integratie met de (ook door ons bestuur gemoderniseerde) ledenadmin-, boekhoud- en incassoworkflow.",
       en: "At my association, drinks are tallied during drinks and paid for later by direct debit (SEPA). " +
         "The previous bar tablet app was difficult to use and maintain. So, in 2024, I created a new app in " +
@@ -127,11 +127,11 @@ const I: UnlocalizedItem[] = [
         "begonnen in GameMaker, en daar heb ik tot m'n 19e veel hobbyprojecten en game jams mee gedaan. " +
         "Later heb ik veel andere frameworks uitgeprobeerd (MonoGame, LWJGL) en ben ik doorgegaan met Godot. " +
         "De screenshot is van 'The Pironaut', hier heb ik een game jam mee gewonnen! " +
-        "Voor een vak van de universiteit heb ik in een groepje een spelletje gemaakt in Unity.",
+        "Bij de universiteit heb ik ook in een groepje een spelletje mogen maken in Unity.",
       en: "Ever since I was a child, I've been interested in creating games. I started my programming career in " +
         "GameMaker, and I used it for many hobby projects and game jams until I was 19. Later, I tried many other " +
         "frameworks (MonoGame, LWJGL) and then moved on to Godot. The screenshot is of 'The Pironaut,' which I " +
-        "won a game jam with! For a university course, I created a game in Unity with a group."
+        "won a game jam with! For a university course, I also created a game in Unity in a small group."
     },
     links: [],
   },
@@ -142,11 +142,11 @@ const I: UnlocalizedItem[] = [
     tags: ["team", "programming", "uni"],
     description: {
       nl: "Voor het eerste project van mijn minor Interactive Environments (bij Industrieel Ontwerpen van de TU) " +
-        "moesten we (binnen een week) in groepjes van 2 een soort 'dier' maken van buigbaar plastic, en sensoren en motoren in verwerken. " +
-        "'Topus' reageert op hoe ver je van 'm af bent door steeds vaker en luider te gillen.",
+        "moesten we (binnen een week) in groepjes van 2 een soort 'dier' maken van buigbaar plastic, en sensoren en motoren erin verwerken. " +
+        "'Topus' reageert op hoe dichtbij je bent door steeds vaker en luider te gillen.",
       en: "For the first project of my Interactive Environments minor (in Industrial Design at TU Delft), we had to " +
         "work in pairs to create a kind of 'animal' out of flexible plastic within a week, incorporating sensors and motors. " +
-        "'Topus' responds to your distance by screeching more frequently and loudly."
+        "'Topus' responds to your proximity by screeching more frequently and loudly."
     },
     links: [],
   },
@@ -260,8 +260,8 @@ const I: UnlocalizedItem[] = [
     description: {
       nl: "Ik speel keys in de vijfkoppige band Once More, ooit beschreven als een 'warme deken': " +
         "buiten traditionele jazz spelen we ook oude Disney-liedjes en wat meer funky dingen. " +
-        "Op de foto hebben we net de 'Popdelft's Got You Covered'-prijs in ontvangst mogen nemen voor het " +
-        "beste arrangement van Umbrella van Rihanna (we hadden er bossa nova van gemaakt)!",
+        "Op de foto hebben we net de 'Popdelft's Got You Covered'-prijs in ontvangst mogen nemen, voor het " +
+        "beste arrangement van Umbrella van Rihanna (we hebben er een bossa nova van gemaakt)!",
       en: "I play keys in the five-piece band Once More, once described as a 'warm blanket': besides traditional jazz, " +
         "we also play old Disney songs and some funkier stuff. In the photo, we just received the 'Popdelft's Got You Covered'" +
         " award for the best arrangement of Rihanna's 'Umbrella' (we turned it into a bossa nova)!"
@@ -274,7 +274,7 @@ const I: UnlocalizedItem[] = [
     image: "/invallen.jpg",
     tags: ["music", "association"],
     description: {
-      nl: "Als er bij een activiteit/betaalde gig-aanvraag geen band in z'n geheel beschikbaar is, worden leden van " +
+      nl: "Als er bij een activiteit/betaalde gigaanvraag geen band in z'n geheel beschikbaar is, worden leden van " +
         "mijn vereniging soms individueel gevraagd of ze een 'gelegenheids-gig' kunnen spelen. " +
         "Dat is vaak super gezellig, dus heb ik dat ook een aantal keer gedaan. " +
         "Op de foto is het ons Ledenweekend, is het al 2 uur 's nachts, en bereid ik me voor op " +
@@ -380,7 +380,7 @@ const I: UnlocalizedItem[] = [
     title: { nl: "Stagemanager", en: "Stagemanager" },
     subtitle: { nl: "Verantwoordelijkheid bij (middel-)groot festival", en: "Responsibilities during (medium) large festival" },
     image: "/stagemanager.jpg",
-    tags: ["team", "hobby"],
+    tags: ["team", "association"],
     description: {
       nl: "Ik ben in 2023 en 2024 stagemanager geweest voor het jaarlijkse festival van onze vereniging: 'Just Jazz'. " +
         "Als stagemanager was ik verantwoordelijk voor het draaiboek van mijn podium, communicatie met de bands " +

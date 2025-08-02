@@ -397,21 +397,8 @@ function Filter({
 }: { locale: Locale, currentTag: Tag | 'all', setCurrentTag: (newCurrentTag: Tag | 'all') => void }) {
   const buttonTags: (Tag | 'all')[] = (['all', ...allTags])
 
-  const getHeight = () =>
-    (document.getElementById('HEADER-NAV-BAR') as HTMLDivElement).getBoundingClientRect().height;
-
-  const [height, setHeight] = useState(0)
-
-  useEffect(() => {
-    setHeight(getHeight());
-  }, [])
-
-  addEventListener('resize', () => {
-    setHeight(getHeight());
-  })
-
   return (
-    <div className="flex flex-wrap justify-center print:hidden sticky" style={{ top: `calc(${height}px + 1rem)` }}>
+    <div className="flex flex-wrap justify-center print:hidden">
       {
         buttonTags.map((tag, tagIndex) =>
           <CallbackBlock key={tagIndex}

@@ -3,8 +3,11 @@
 import {Block, CallbackBlock, LinkBlock} from "@/components/Block";
 import {twMerge} from "tailwind-merge";
 import {Locale} from "@/i18n/routing";
-import {useState} from "react";
+import {useCallback, useState} from "react";
 import _ from "lodash";
+import {useSearchParams} from "next/navigation";
+import {QueryParamProvider, StringParam, useQueryParam, withDefault} from "use-query-params";
+import NextAdapterApp from "next-query-params/app";
 
 const allTags = ["solo", "team", "programming", "uni", "hobby", "association", "music"] as const;
 type Tag = (typeof allTags)[number];
@@ -286,38 +289,65 @@ const D = {
 }
 
 
+export function useTagFilter() {
+  const searchParams = useSearchParams();
+
+  const createQueryString = useCallback(
+    (name: string, value: string) => {
+      const params = new URLSearchParams(searchParams.toString())
+      params.set(name, value)
+
+      return params.toString()
+    },
+    [searchParams]
+  )
+
+
+}
+
 export function PortfolioBlock({
   locale,
 }: { locale: Locale }) {
   // Get dictionary
   const dict = D[locale];
 
-  // Define filter state
-  const [currentTag, setCurrentTag] = useState<Tag | 'all'>('all');
-
   return (<>
     <div className='flex flex-col items-center mt-5'>
       {/* Title */}
       <h1>{dict.title}</h1>
 
-      {/* Filters */}
-      <Filters locale={locale} currentTag={currentTag} setCurrentTag={setCurrentTag} />
+      {/* Filter and items */}
+      <QueryParamProvider adapter={NextAdapterApp}>
+        <FilterAndItems locale={locale}/>
+      </QueryParamProvider>
+    </div>
+  </>);
+}
+
+function FilterAndItems({locale} : {locale: Locale}) {
+  // Define filter state
+  const [currentTag, setCurrentTag] = useQueryParam('tag', withDefault(StringParam, 'all'));
+
+  return (<>
+    <div className='flex flex-col items-center mt-5'>
+      {/* Filter */}
+      <Filter locale={locale} currentTag={currentTag as (Tag | 'all')} setCurrentTag={setCurrentTag} />
 
       {/* Items */}
-      <Block className='w-full md:w-[50%] md:min-w-[35rem] flex flex-col gap-y-10'>
-        <PortfolioItems locale={locale} currentTag={currentTag}/>
+      <Block className='w-full md:w-[60%] md:min-w-[35rem] flex flex-col gap-y-10'>
+        <PortfolioItems locale={locale} currentTag={currentTag as (Tag | 'all')}/>
       </Block>
     </div>
   </>);
 }
 
-function Filters({
+function Filter({
   locale, currentTag, setCurrentTag
 }: { locale: Locale, currentTag: Tag | 'all', setCurrentTag: (newCurrentTag: Tag | 'all') => void }) {
   const buttonTags: (Tag | 'all')[] = (['all', ...allTags])
 
   return (
-    <div className="flex flex-wrap justify-center">
+    <div className="flex flex-wrap justify-center print:hidden">
       {
         buttonTags.map((tag, tagIndex) =>
           <CallbackBlock key={tagIndex}
@@ -336,8 +366,11 @@ function Filters({
 function PortfolioItems({
   locale, currentTag
 }: { locale: Locale, currentTag: Tag | 'all' }) {
-  const items = D[locale].items;
+  // Get dictionary
+  const dict = D[locale];
 
+  // Get items, filter
+  const items = dict.items;
   const filteredItems = currentTag == 'all' ? items : items.filter(it => it.tags.includes(currentTag));
 
   return filteredItems.map((item, index) => {
@@ -346,7 +379,7 @@ function PortfolioItems({
     return (
       <section key={item.title} className=''>
         <div className={twMerge('w-[80%] md:w-[60%] print:w-[50%]', flip && 'ml-auto')}>
-          <img src={item.image ?? "/foto.png"} alt={undefined}
+          <img src={item.image ?? "/foto.png"} alt=""
                className='w-full mb-4 object-cover rounded-xl shadow-heavy'/>
 
           {/* Title and tags */}

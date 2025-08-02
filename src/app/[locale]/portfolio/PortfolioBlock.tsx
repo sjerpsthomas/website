@@ -9,7 +9,7 @@ function getItems(locale: Locale) {
   const I = [
     {
       title: { nl: "thomassjerps.nl", en: "thomassjerps.nl" },
-      subtitle: "Deze website!",
+      subtitle: { nl: "Deze website!", en: "This website!" },
       image: "/thomassjerps_nl.png",
       tags: [] as Tag[],
       description: "TODO: beschrijving",
@@ -17,7 +17,7 @@ function getItems(locale: Locale) {
     },
     {
       title: { nl: "Masterscriptie", en: "Master's thesis" },
-      subtitle: "Godot, C#, Python",
+      subtitle: { nl: "Godot, C#, Python", en: "Godot, C#, Python" },
       image: "/masterscriptie.jpg",
       tags: [] as Tag[],
       description: "TODO: beschrijving",
@@ -25,7 +25,7 @@ function getItems(locale: Locale) {
     },
     {
       title: { nl: "Bartablet", en: "Bar tablet" },
-      subtitle: "",
+      subtitle: { nl: "", en: "" },
       image: "/bartablet.png",
       tags: [] as Tag[],
       description: "TODO: beschrijving",
@@ -33,7 +33,7 @@ function getItems(locale: Locale) {
     },
     {
       title: { nl: "grooverjazz.nl", en: "grooverjazz.nl" },
-      subtitle: "",
+      subtitle: { nl: "", en: "" },
       image: "/grooverjazz_nl.png",
       tags: [] as Tag[],
       description: "TODO: beschrijving",
@@ -41,7 +41,7 @@ function getItems(locale: Locale) {
     },
     {
       title: { nl: "Videospelletjes!", en: "Video games!" },
-      subtitle: "",
+      subtitle: { nl: "", en: "" },
       image: "/videospelletjes.png",
       tags: [] as Tag[],
       description: "TODO: beschrijving",
@@ -49,7 +49,7 @@ function getItems(locale: Locale) {
     },
     {
       title: { nl: "Minor: Topus", en: "Minor: Topus" },
-      subtitle: "",
+      subtitle: { nl: "", en: "" },
       image: "/minor_topus.png",
       tags: [] as Tag[],
       description: "TODO: beschrijving",
@@ -57,7 +57,7 @@ function getItems(locale: Locale) {
     },
     {
       title: { nl: "Minor: Nenzo", en: "Minor: Nenzo" },
-      subtitle: "",
+      subtitle: { nl: "", en: "" },
       image: "/minor_nenzo.png",
       tags: [] as Tag[],
       description: "TODO: beschrijving",
@@ -65,7 +65,7 @@ function getItems(locale: Locale) {
     },
     {
       title: { nl: "Minor: Reflect", en: "Minor: Reflect" },
-      subtitle: "",
+      subtitle: { nl: "", en: "" },
       image: "/minor_reflect.jpg",
       tags: [] as Tag[],
       description: "TODO: beschrijving",
@@ -73,7 +73,7 @@ function getItems(locale: Locale) {
     },
     {
       title: { nl: "Softwareproject", en: "Software Project" },
-      subtitle: "",
+      subtitle: { nl: "", en: "" },
       image: "/software_project.png",
       tags: [] as Tag[],
       description: "TODO: beschrijving",
@@ -81,7 +81,7 @@ function getItems(locale: Locale) {
     },
     {
       title: { nl: "Bachelorscriptie", en: "Bachelor thesis" },
-      subtitle: "",
+      subtitle: { nl: "", en: "" },
       image: "/bachelor_scriptie.png",
       tags: [] as Tag[],
       description: "TODO: beschrijving",
@@ -89,7 +89,7 @@ function getItems(locale: Locale) {
     },
     {
       title: { nl: "Educool", en: "Educool" },
-      subtitle: "",
+      subtitle: { nl: "", en: "" },
       image: "/educool.png",
       tags: [] as Tag[],
       description: "TODO: beschrijving",
@@ -97,7 +97,7 @@ function getItems(locale: Locale) {
     },
     {
       title: { nl: "Band: Tiewrap", en: "Band: Tiewrap" },
-      subtitle: "",
+      subtitle: { nl: "", en: "" },
       image: "/tiewrap.jpg",
       tags: [] as Tag[],
       description: "TODO: beschrijving",
@@ -105,7 +105,7 @@ function getItems(locale: Locale) {
     },
     {
       title: { nl: "Band: Once More", en: "Band: Once More" },
-      subtitle: "",
+      subtitle: { nl: "", en: "" },
       image: "/once_more.jpg",
       tags: [] as Tag[],
       description: "TODO: beschrijving",
@@ -113,7 +113,7 @@ function getItems(locale: Locale) {
     },
     {
       title: { nl: "Invaller/gelegenheids-gigs", en: "Substitute/occasional gigs" },
-      subtitle: "",
+      subtitle: { nl: "", en: "" },
       image: "/invallen.jpg",
       tags: [] as Tag[],
       description: "TODO: beschrijving",
@@ -121,7 +121,7 @@ function getItems(locale: Locale) {
     },
     {
       title: { nl: "bit.ly/niksaandehand", en: "bit.ly/niksaandehand" },
-      subtitle: "",
+      subtitle: { nl: "", en: "" },
       image: "/niksaandehand.png",
       tags: [] as Tag[],
       description: "TODO: beschrijving",
@@ -129,7 +129,7 @@ function getItems(locale: Locale) {
     },
     {
       title: { nl: "Fotografie", en: "Photography" },
-      subtitle: "",
+      subtitle: { nl: "", en: "" },
       image: "/fotografie.png",
       tags: [] as Tag[],
       description: "TODO: beschrijving",
@@ -137,7 +137,7 @@ function getItems(locale: Locale) {
     },
     {
       title: { nl: "Groover Real Book", en: "Groover Real Book" },
-      subtitle: "",
+      subtitle: { nl: "", en: "" },
       image: "/realbook.png",
       tags: [] as Tag[],
       description: "TODO: beschrijving",
@@ -145,7 +145,7 @@ function getItems(locale: Locale) {
     },
     {
       title: { nl: "Groover Top 2-Jazzend", en: "Groover Top 2-Jazzend" },
-      subtitle: "",
+      subtitle: { nl: "", en: "" },
       image: "/top_2_jazzend.png",
       tags: [] as Tag[],
       description: "TODO: beschrijving",
@@ -153,7 +153,7 @@ function getItems(locale: Locale) {
     },
     {
       title: { nl: "Jaarboek", en: "Year book" },
-      subtitle: "",
+      subtitle: { nl: "", en: "" },
       image: "/jaarboek.png",
       tags: [] as Tag[],
       description: "TODO: beschrijving",
@@ -161,7 +161,7 @@ function getItems(locale: Locale) {
     },
     {
       title: { nl: "extremec4", en: "extremec4" },
-      subtitle: "",
+      subtitle: { nl: "", en: "" },
       image: "/extremec4.png",
       tags: [] as Tag[],
       description: "TODO: beschrijving",
@@ -173,6 +173,7 @@ function getItems(locale: Locale) {
   return I.map(item => ({
     ...item,
     title: item.title[locale],
+    subtitle: item.subtitle[locale],
   }))
 }
 

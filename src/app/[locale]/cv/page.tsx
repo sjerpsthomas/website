@@ -2,7 +2,6 @@ import {Header} from "@/components/header/Header";
 import {Locale} from "@/i18n/routing";
 import {AbilitiesBlock} from "@/app/[locale]/cv/AbilitiesBlock";
 import {ExperienceBlock} from "@/app/[locale]/cv/ExperienceBlock";
-import {Footer} from "@/components/Footer";
 import {EducationBlock} from "@/app/[locale]/cv/EducationBlock";
 
 
@@ -56,9 +55,6 @@ export default async function CVPage({ params }: { params: Promise<{ locale: str
         <p className='block print:hidden'>{dict.factDigital}</p>
         <p className='hidden print:block'>{dict.factPrint}</p>
       </div>
-
-      {/* Footer */}
-      <Footer locale={locale}/>
     </>
   );
 }

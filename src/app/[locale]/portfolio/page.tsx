@@ -1,6 +1,5 @@
 import {Header} from "@/components/header/Header";
 import {Locale} from "@/i18n/routing";
-import {Footer} from "@/components/Footer";
 import {PortfolioBlock} from "@/app/[locale]/portfolio/PortfolioBlock";
 
 
@@ -37,9 +36,6 @@ export default async function PortfolioPage({ params }: { params: Promise<{ loca
       <div className='text-center text-sm mt-6 mb-3 italic'>
         <p className='hidden print:block'>{dict.factPrint}</p>
       </div>
-
-      {/* Footer */}
-      <Footer locale={locale}/>
     </>
   );
 }

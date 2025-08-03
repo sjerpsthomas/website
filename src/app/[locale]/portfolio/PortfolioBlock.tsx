@@ -81,7 +81,10 @@ const I: UnlocalizedItem[] = [
         "self-devised research framework, which included self-assessment of participants, supplemented with " +
         "third-party assessment, and assessment using statistical techniques."
     },
-    links: [],
+    links: [
+      { text: { nl: "Repository", en: "Repository" }, href: "https://github.com/sjerpsthomas/miles" },
+      { text: { nl: "Publicatie", en: "Publication" }, href: "https://repository.tudelft.nl/record/uuid:822728ff-9769-429f-9a88-0f2e960a26e4" },
+    ],
   },
   {
     title: { nl: "Bartablet", en: "Bar tablet" },
@@ -98,7 +101,10 @@ const I: UnlocalizedItem[] = [
         "Jetpack Compose that works better, with a future-proof view and integration with the membership administration, " +
         "accounting, and collection workflows (which we also modernized)."
     },
-    links: [],
+    links: [
+      { text: { nl: "Repository", en: "Repository" }, href: "https://github.com/grooverjazz/bar" },
+      { text: { nl: "Documentatie", en: "Documentation" }, href: "https://docs.google.com/document/d/13y2PimAA90RxNFoKKKYDVXsU0YkKKWx4LB_UWDWK3Qg" },
+    ],
   },
   {
     title: { nl: "grooverjazz.nl", en: "grooverjazz.nl" },
@@ -108,14 +114,17 @@ const I: UnlocalizedItem[] = [
     description: {
       nl: "In 2024 is een nieuwe website van mijn vereniging gelanceerd. De launch was overhaast gedaan, en dit " +
         "zorgde voor sub-par codekwaliteit en documentatie. In 2024-2025 heb ik veel pagina's beter op een lijn " +
-        "geplaatst met het Figma-ontwerp, heb ik de zoekfunctie van een van de pagina's op de schop gegooid en " +
+        "geplaatst met het Figma-ontwerp, heb ik de zoekfunctie van een van de pagina's ('/bands') op de schop gegooid en " +
         "integratie met formulieren van de nieuwe ledenadministratie gefaciliteerd.",
       en: "In 2024, my association launched a new website. The launch was rushed, resulting in subpar code quality " +
         "and documentation. In 2024-2025, I aligned many pages more closely with the Figma design, " +
-        "overhauled the search function on one of the pages, and facilitated integration with web forms " +
+        "overhauled the search function on one of the pages ('/bands'), and facilitated integration with web forms " +
         "of new member administration software."
     },
-    links: [],
+    links: [
+      { text: { nl: "Website", en: "Website" }, href: "https://www.grooverjazz.nl" },
+      { text: { nl: "/bands", en: "/bands" }, href: "https://www.grooverjazz.nl/bands" },
+    ],
   },
   {
     title: { nl: "Videospelletjes!", en: "Video games!" },
@@ -133,7 +142,12 @@ const I: UnlocalizedItem[] = [
         "frameworks (MonoGame, LWJGL) and then moved on to Godot. The screenshot is of 'The Pironaut,' which I " +
         "won a game jam with! For a university course, I also created a game in Unity in a small group."
     },
-    links: [],
+    links: [
+      { text: { nl: "itch.io", en: "itch.io" }, href: "https://sjerpsthomas.itch.io/" },
+      { text: { nl: "GM48 (GameMaker game jam)", en: "GM48 (GameMaker game jam)" }, href: "https://gm48.net/user/2/thomas-sjerps" },
+      { text: { nl: "Videogame uni-project", en: "Video game uni project" }, href: "https://www.researchgate.net/publication/374175098" },
+      { text: { nl: "Videogame voor vereniging", en: "Video game for association" }, href: "https://sjerpsthomas.github.io/" },
+    ],
   },
   {
     title: { nl: "Minor: Topus", en: "Minor: Topus" },
@@ -148,7 +162,9 @@ const I: UnlocalizedItem[] = [
         "work in pairs to create a kind of 'animal' out of flexible plastic within a week, incorporating sensors and motors. " +
         "'Topus' responds to your proximity by screeching more frequently and loudly."
     },
-    links: [],
+    links: [
+      { text: { nl: "Video", en: "Video" }, href: "https://youtu.be/sB_sASpDmLU" },
+    ],
   },
   {
     title: { nl: "Minor: Nenzo", en: "Minor: Nenzo" },
@@ -161,13 +177,15 @@ const I: UnlocalizedItem[] = [
         "De oplossing: 'Nenzo' bestaat uit een oppervlak met kijkgaten, waar een bezoeker nieuwsverhalen kan zien. " +
         "Deze verhalen komen (door middel van een motortje en lus touw, en luider-wordende 'ambient' muziek) " +
         "steeds dichter bij de bezoeker. Ik was onder andere verantwoordelijk voor de motor-beweging en audio.",
-      en: "The second part of the minor consisted of a larger interactive installation, again in groups of two. " +
+      en: "The second part of the minor consisted of a larger interactive installation, again in pairs. " +
         "The brief: the Koninklijke Bibliotheek (National Library) in The Hague wants to involve more people from the outside world. " +
         "The solution: 'Nenzo' consists of a surface with peepholes through which visitors can view news stories. " +
         "These stories are brought closer and closer to the visitor (by means of a motor and loop of rope, " +
         "and increasingly louder ambient music). I was responsible for, among other things, the motor movement and audio."
     },
-    links: [],
+    links: [
+      { text: { nl: "Poster", en: "Poster" }, href: "/portfolio/minor_nenzo.pdf" },
+    ],
   },
   {
     title: { nl: "Minor: Reflect", en: "Minor: Reflect" },
@@ -186,7 +204,11 @@ const I: UnlocalizedItem[] = [
         "The project received a grant for continuation in 2024, though little has happened since then. " +
         "The wall remained in the National Library building for a while."
     },
-    links: [],
+    links: [
+      { text: { nl: "Projectpagina", en: "Project page" }, href: "https://interactive-environments.nl/reflect/" },
+      { text: { nl: "Repository", en: "Repository" }, href: "https://github.com/interactive-environments/2122-Reflect-flect-flect-flect" },
+      { text: { nl: "Nieuwsartikel", en: "News article" }, href: "https://www.tudelft.nl/2022/io/januari/tu-delft-interactive-environments-minor-designs-for-national-librarys-digital-collection" },
+    ],
   },
   {
     title: { nl: "Softwareproject", en: "Software Project" },
@@ -205,7 +227,9 @@ const I: UnlocalizedItem[] = [
         "Multiple applications working together form a company, enabling theoretical stress testing. " +
         "I was responsible for the peer-to-peer communication via Nakama."
     },
-    links: [],
+    links: [
+      { text: { nl: "teec2.nl", en: "teec2.nl" }, href: "https://teec2.nl/" },
+    ],
   },
   {
     title: { nl: "Bachelorscriptie", en: "Bachelor thesis" },
@@ -221,7 +245,9 @@ const I: UnlocalizedItem[] = [
         "These aren't 'normal' 3D glasses: these glasses bend blue light toward your nose and red light the other way, " +
         "creating the illusion of depth. My task was to statistically optimize images for both depth contrast and true-to-life colors."
     },
-    links: [],
+    links: [
+      { text: { nl: "Publicatie", en: "Publication" }, href: "https://repository.tudelft.nl/record/uuid:75fd3cb7-da3e-4ce7-8e2c-708303a3127c" },
+    ],
   },
   {
     title: { nl: "Educool", en: "Educool" },
@@ -237,7 +263,11 @@ const I: UnlocalizedItem[] = [
         "With that in mind, we started the rap duo Educool, where I'm responsible for recording and music production. " +
         "We've been around for 10 years and have four albums that are on all streaming services, but I wouldn't listen to them if I were you."
     },
-    links: [],
+    links: [
+      { text: { nl: "Spotify", en: "Spotify" }, href: "https://open.spotify.com/artist/5Ac67c0SMLpaQS5FZJeNsE" },
+      { text: { nl: "Apple Music", en: "Apple Music" }, href: "https://music.apple.com/us/artist/educool/1504887773" },
+      { text: { nl: "YouTube", en: "YouTube" }, href: "https://www.youtube.com/channel/UCBWdRQ-eiJ4QzuoV1K_sy5Q" },
+    ],
   },
   {
     title: { nl: "Band: Tiewrap", en: "Band: Tiewrap" },
@@ -250,7 +280,9 @@ const I: UnlocalizedItem[] = [
       en: "My fellow former board member Yiska and I are in the jazz duo Tiewrap. She sings, and I play piano. " +
         "We mainly play jazz standards, and we're available for any occasion!"
     },
-    links: [],
+    links: [
+      { text: { nl: "Band-pagina", en: "Band page" }, href: "https://grooverjazz.nl/bands/Tiewrap" },
+    ],
   },
   {
     title: { nl: "Band: Once More", en: "Band: Once More" },
@@ -266,7 +298,9 @@ const I: UnlocalizedItem[] = [
         "we also play old Disney songs and some funkier stuff. In the photo, we just received the 'Popdelft's Got You Covered'" +
         " award for the best arrangement of Rihanna's 'Umbrella' (we turned it into a bossa nova)!"
     },
-    links: [],
+    links: [
+      { text: { nl: "Band-pagina", en: "Band page" }, href: "https://grooverjazz.nl/bands/Once%20More" },
+    ],
   },
   {
     title: { nl: "Invaller/gelegenheids-gigs", en: "Substitute/occasional gigs" },
@@ -297,7 +331,9 @@ const I: UnlocalizedItem[] = [
       en: "For our sixth-grade (17 years old) graduation stunt, we made a series of short films that aired throughout the day. " +
         "I was responsible for filming and editing, and the videos are still online!"
     },
-    links: [],
+    links: [
+      { text: { nl: "bit.ly/niksaandehand", en: "bit.ly/niksaandehand" }, href: "https://bit.ly/niksaandehand" },
+    ],
   },
   {
     title: { nl: "Fotografie", en: "Photography" },
@@ -321,13 +357,17 @@ const I: UnlocalizedItem[] = [
       nl: "Als je samen jazz speelt, doe je dat vaak met 'standards': liedjes die iedereen kent. 'Real books' zijn " +
         "repertoireboekjes met populaire standards. Bij mijn vereniging hadden we er zelf 2 gemaakt. " +
         "Van die boekjes waren echter de oorspronkelijke bronnen verloren, waardoor correctie en aanpassing onmogelijk was. " +
-        "Na honderden uren MusicXML importeren, handmatig overtikken en formatting gelijktrekken, heb ik er één mooi boekje van gemaakt.",
+        "Na honderden uren MusicXML importeren, handmatig overtikken en formatting gelijktrekken, heb ik er één mooi boekje van gemaakt " +
+        "(met een mooie promotievideo!).",
       en: "When you play jazz together, you often do so with 'standards': songs everyone generally knows. 'Real books' " +
         "are repertoire booklets with popular standards. My assosiation had created two of them ourselves. " +
         "However, the original sources for those booklets had been lost, making correction and adaptation impossible. " +
-        "After hundreds of hours of importing MusicXML, manual retyping, and formatting alignment, I managed to create one beautiful booklet."
+        "After hundreds of hours of importing MusicXML, manual retyping, and formatting alignment, I managed to create one beautiful booklet " +
+        "(with a self-made promotion video!)."
     },
-    links: [],
+    links: [
+      { text: { nl: "Reveal-video", en: "Reveal video" }, href: "https://youtu.be/Oge_-XNskw8" },
+    ],
   },
   {
     title: { nl: "Groover Top 2-Jazzend", en: "Groover Top 2-Jazzend" },
@@ -344,7 +384,10 @@ const I: UnlocalizedItem[] = [
         "With the 'Top 2-Jazzend', members could vote by submitting a (Spotify Wrapped) playlist, " +
         "and a Python script I wrote, using the Spotify API, could merge them into a single list!"
     },
-    links: [],
+    links: [
+      { text: { nl: "Top 2-Jazzend", en: "Top 2-Jazzend" }, href: "https://open.spotify.com/playlist/0l2uxk9gEZIPveqsheEwJ1" },
+      { text: { nl: "Repository", en: "Repository" }, href: "https://github.com/grooverjazz/top-2-jazzend" },
+    ],
   },
   {
     title: { nl: "Jaarboek", en: "Yearbook" },
@@ -392,7 +435,9 @@ const I: UnlocalizedItem[] = [
         "and sound crew during and after set- and instrument changes. In 2023, there were 1000 visitors and I was" +
         " responsible for the second stage; in 2024, there were 600 visitors and I was responsible for the main stage."
     },
-    links: [],
+    links: [
+      { text: { nl: "justjazzfestival.nl", en: "justjazzfestival.nl" }, href: "https://justjazzfestival.nl/" },
+    ],
   },
 ]
 

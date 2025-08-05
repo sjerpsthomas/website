@@ -10,8 +10,8 @@ export const STRAPI_API_URL = process.env.STRAPI_API_URL;
 
 // Strapi client
 const client = strapi({
-  baseURL: STRAPI_API_URL,
-  auth: STRAPI_API_TOKEN,
+  baseURL: STRAPI_API_URL! as string,
+  auth: STRAPI_API_TOKEN! as string,
 });
 
 // Strapi locale conversion

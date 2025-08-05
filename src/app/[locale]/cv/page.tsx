@@ -9,12 +9,18 @@ const D = {
   nl: {
     title: "CV",
     factDigital: "Leuk feitje: als je deze pagina print, krijg je mijn echte CV!",
-    factPrint: "Leuk feitje: deze pagina is een afdruk van thomassjerps.nl/cv!"
+    factPrint: [
+      "Leuk feitje: deze pagina is een afdruk van thomassjerps.nl/cv!",
+      "Op deze site kun je ook mijn portfolio vinden, en meer."
+    ]
   },
   en: {
     title: "CV",
     factDigital: "Fun fact: if you print this page, you get my actual CV!",
-    factPrint: "Fun fact: this page is a print-out of thomassjerps.nl/cv!"
+    factPrint: [
+      "Fun fact: this page is a print-out of thomassjerps.nl/cv!",
+      "On this site, you can also find my portfolio and more."
+    ]
   },
 }
 
@@ -53,7 +59,7 @@ export default async function CVPage({ params }: { params: Promise<{ locale: str
       {/* Printout comment */}
       <div className='text-center text-sm mt-6 mb-3 italic'>
         <p className='block print:hidden'>{dict.factDigital}</p>
-        <p className='hidden print:block'>{dict.factPrint}</p>
+        <p className='hidden print:block'>{dict.factPrint[0]}<br/>{dict.factPrint[1]}</p>
       </div>
     </>
   );

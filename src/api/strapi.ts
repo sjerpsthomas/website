@@ -21,20 +21,38 @@ const getStrapiLocale = (locale: Locale) => ({
 }[locale]);
 
 
+// Reduce items response
+const reduceItems: PortfolioItem[] = (items: unknown[]) => items.map(item => ({
+  id: item.id,
+  title: item.title,
+  subtitle: item.subtitle,
+  image: item.image?.url,
+  tags: reduceTags(item.tags),
+  description: item.description,
+  links: item.links,
+}))
+
 // Get all portfolio items
 export const getPortfolioItems = cache(async (locale: Locale) => {
-  return (await client.collection('portfolio-items').find({
+  const res = await client.collection('portfolio-items').find({
     populate: ['image', 'tags', 'links'],
     locale: getStrapiLocale(locale),
-  })).data.map((item) => ({
-    ...item,
-    image: item.image?.url
-  })) as unknown as PortfolioItem[];
+  })
+
+  return reduceItems(res.data);
 })
+
+// Reduce tags response
+const reduceTags: PortfolioTag[] = (tags: unknown[]) => tags.map(tag => ({
+  id: tag.id,
+  name: tag.name,
+}))
 
 // Get all portfolio tags
 export const getPortfolioTags = cache(async (locale: Locale) => {
-  return (await client.collection('tags').find({
+  const res = await client.collection('tags').find({
     locale: getStrapiLocale(locale),
-  })).data as unknown as PortfolioTag[];
+  })
+
+  return reduceTags(res.data);
 })

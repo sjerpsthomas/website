@@ -3,10 +3,10 @@
 import {Block, CallbackBlock} from "@/components/Block";
 import {twMerge} from "tailwind-merge";
 import {Locale} from "@/i18n/routing";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import _ from "lodash";
-import {QueryParamProvider, StringParam, useQueryParam, withDefault} from "use-query-params";
-import NextAdapterApp from "next-query-params/app";
+import {PortfolioItem, PortfolioTag} from "@/api/types";
+import {BlocksRenderer} from "@strapi/blocks-react-renderer";
 
 const allTags = ["solo", "team", "programming", "uni", "hobby", "association", "music"] as const;
 type Tag = (typeof allTags)[number];
@@ -445,19 +445,17 @@ const D = {
   nl: {
     title: "Portfolio",
     items: I.map(item => localize(item, "nl")),
-    tagError: "Incorrecte tag ingevoerd. Hoe krijg je dat voor elkaar?",
   },
   en: {
     title: "Portfolio",
     items: I.map(item => localize(item, "en")),
-    tagError: "Incorrect tag specified. How'd you get that to happen?",
   },
 }
 
 
 export function PortfolioBlock({
-  locale,
-}: { locale: Locale }) {
+  locale, items, tags
+}: { locale: Locale, items: PortfolioItem[], tags: PortfolioTag[] }) {
   // Get dictionary
   const dict = D[locale];
 
@@ -467,52 +465,52 @@ export function PortfolioBlock({
       <h1>{dict.title}</h1>
 
       {/* Filter and items */}
-      <QueryParamProvider adapter={NextAdapterApp}>
-        <FilterAndItems locale={locale}/>
-      </QueryParamProvider>
+      <FilterAndItems locale={locale} items={items} tags={tags}/>
     </div>
   </>);
 }
 
-function FilterAndItems({locale} : {locale: Locale}) {
-  // Get dictionary
-  const dict = D[locale];
-
+function FilterAndItems({
+  locale, items, tags
+} : { locale: Locale, items: PortfolioItem[], tags: PortfolioTag[] }) {
   // Define filter state
-  const [currentTag, setCurrentTag] = useQueryParam('tag', withDefault(StringParam, 'all'));
+  const [currentTag, setCurrentTag] = useState<number>(-1);
 
   return (<>
     <div className='w-full md:w-[60%] md:min-w-[35rem] flex flex-col items-center'>
       {/* Filter */}
-      <Filter locale={locale} currentTag={currentTag as (Tag | 'all')} setCurrentTag={setCurrentTag} />
+      <Filter locale={locale} tags={tags} currentTag={currentTag} setCurrentTag={setCurrentTag} />
 
       {/* Items */}
       <Block className='flex flex-col gap-y-10'>
         {/* Tag error */}
-        { ['all', ...allTags].includes(currentTag) || <div>{dict.tagError}</div> }
-
-        <PortfolioItems locale={locale} currentTag={currentTag as (Tag | 'all')}/>
+        <PortfolioItems items={items} currentTag={currentTag}/>
       </Block>
     </div>
   </>);
 }
 
 function Filter({
-  locale, currentTag, setCurrentTag
-}: { locale: Locale, currentTag: Tag | 'all', setCurrentTag: (newCurrentTag: Tag | 'all') => void }) {
-  const buttonTags: (Tag | 'all')[] = (['all', ...allTags])
+  locale, tags, currentTag, setCurrentTag
+}: { locale: Locale, tags: PortfolioTag[], currentTag: number, setCurrentTag: (newCurrentTag: number) => void }) {
+  // Include 'all' as pseudo-tag
+  const tagsAndAll = [
+    { id: -1, name: { nl: 'Allemaal', en: 'All' }[locale] },
+    ...tags
+  ]
 
   return (
     <div className="flex flex-wrap justify-center print:hidden">
       {
-        buttonTags.map((tag, tagIndex) =>
-          <CallbackBlock key={tagIndex}
-                         className={twMerge(currentTag == tag ? "bg-amber-300 text-black" : "bg-black", "md:py-3 md:m-1 shadow-lg")}
-                         onClick={() => {
-                           setCurrentTag(currentTag == tag ? 'all' : tag);
-                         }}>
-            <p className='text-center'>{_.capitalize(localizedTags[tag][locale])}</p>
-          </CallbackBlock>
+        tagsAndAll.map((tag, tagIndex) =>
+          <div key={tagIndex}>
+            <CallbackBlock className={twMerge(currentTag == tag.id ? "bg-amber-300 text-black" : "bg-black", "md:py-3 md:m-1 shadow-lg")}
+                           onClick={() => {
+                             setCurrentTag(currentTag == tag.id ? -1 : tag.id);
+                           }}>
+              <p className='text-center'>{_.capitalize(tag.name)}</p>
+            </CallbackBlock>
+          </div>
         )
       }
     </div>
@@ -520,14 +518,10 @@ function Filter({
 }
 
 function PortfolioItems({
-  locale, currentTag
-}: { locale: Locale, currentTag: Tag | 'all' }) {
-  // Get dictionary
-  const dict = D[locale];
-
-  // Get items, filter
-  const items = dict.items;
-  const filteredItems = currentTag == 'all' ? items : items.filter(it => it.tags.includes(currentTag));
+  items, currentTag
+}: { items: PortfolioItem[], currentTag: Tag | 'all' }) {
+  // Filter items
+  const filteredItems = currentTag == -1 ? items : items.filter(item => item.tags.some(tag => tag.id == currentTag));
 
   return filteredItems.map((item, index) => {
     const flip = index % 2 == 0;
@@ -543,15 +537,22 @@ function PortfolioItems({
             <h2>{item.title}</h2>
             <div className='pl-5 flex flex-wrap gap-x-3 gap-y-1'>
               {item.tags.map((tag, tagIndex) =>
-                <div key={tagIndex} className='bg-[#151515] px-2 py-1 rounded-lg shadow-md'>{localizedTags[tag][locale]}</div>
+                <div key={tagIndex} className='bg-[#151515] px-2 py-1 rounded-lg shadow-md'>{_.lowerCase(tag.name) }</div>
               )}
             </div>
           </div>
 
-          <p className='pl-5 italic mb-1'>{item.subtitle}</p>
+          {/* Subtitle */}
+          <div className='pl-5 mb-1'>
+            <BlocksRenderer content={item.subtitle} blocks={{
+              paragraph: ({ children }) => <p className="italic">{children}</p>,
+            }}/>
+          </div>
 
-          <p>{item.description}</p>
+          {/* Description */}
+          <BlocksRenderer content={item.description}/>
 
+          {/* Links */}
           {
             item.links.length > 0 && <div className='mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 print:hidden'>
               <p>Links:</p>

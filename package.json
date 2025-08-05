@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@strapi/blocks-react-renderer": "^1.0.2",
     "@strapi/client": "^1.4.0",
     "@types/lodash": "^4.17.20",
     "@vercel/speed-insights": "^1.2.0",

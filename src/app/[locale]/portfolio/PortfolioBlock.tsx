@@ -519,7 +519,7 @@ function Filter({
 
 function PortfolioItems({
   items, currentTag
-}: { items: PortfolioItem[], currentTag: Tag | 'all' }) {
+}: { items: PortfolioItem[], currentTag: number }) {
   // Filter items
   const filteredItems = currentTag == -1 ? items : items.filter(item => item.tags.some(tag => tag.id == currentTag));
 

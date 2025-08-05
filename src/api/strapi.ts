@@ -1,7 +1,7 @@
 import {Locale} from "@/i18n/routing";
 import {strapi} from "@strapi/client";
 import {cache} from "react";
-import {PortfolioItem} from "@/api/types";
+import {PortfolioItem, PortfolioTag} from "@/api/types";
 
 
 // Strapi API .env values
@@ -27,15 +27,14 @@ export const getPortfolioItems = cache(async (locale: Locale) => {
     populate: ['image', 'tags', 'links'],
     locale: getStrapiLocale(locale),
   })).data.map((item) => ({
-      ...item,
-      image: item.image.url
-    })
-  ) as PortfolioItem[]
+    ...item,
+    image: item.image?.url
+  })) as unknown as PortfolioItem[];
 })
 
 // Get all portfolio tags
 export const getPortfolioTags = cache(async (locale: Locale) => {
   return (await client.collection('tags').find({
     locale: getStrapiLocale(locale),
-  })).data as PortfolioItem[]
+  })).data as unknown as PortfolioTag[];
 })

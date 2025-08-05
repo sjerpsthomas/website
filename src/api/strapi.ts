@@ -28,7 +28,7 @@ export const getPortfolioItems = cache(async (locale: Locale) => {
     locale: getStrapiLocale(locale),
   })).data.map((item) => ({
       ...item,
-      image: item.image.formats.large.url
+      image: item.image.url
     })
   ) as PortfolioItem[]
 })

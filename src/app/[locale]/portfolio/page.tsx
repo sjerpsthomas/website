@@ -29,12 +29,8 @@ export default async function PortfolioPage({ params }: { params: Promise<{ loca
       {/* Header */}
       <Header locale={locale} currentPage='portfolio' />
 
-      <div>{JSON.stringify(items)}</div>
-
       {/* Content */}
       <main>
-        {/* TODO: filter */}
-
         <PortfolioBlock locale={locale} items={items} tags={tags}/>
       </main>
 

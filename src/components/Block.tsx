@@ -1,6 +1,7 @@
 ﻿import Link from "next/link";
 import React from "react";
 import {twMerge} from "tailwind-merge";
+import {Locale} from "@/api/locale";
 
 type BlockProps = {
   children: React.ReactNode;
@@ -22,9 +23,10 @@ export function LinkBlock({
   children,
   className,
   href,
-}: Readonly<BlockProps & {href: string}>) {
+  locale
+}: Readonly<BlockProps & {href: string, locale: Locale}>) {
   return (
-    <Link className='m-1 md:m-3' href={href}>
+    <Link className='m-1 md:m-3' href={'/' + locale + '/' + href}>
       <Block className={twMerge('m-0 md:m-0 bg-blue-900 hover:scale-105 transition-transform', className)}>
         {children}
       </Block>

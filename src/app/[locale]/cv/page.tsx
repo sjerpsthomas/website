@@ -1,8 +1,8 @@
 import {Header} from "@/components/header/Header";
-import {Locale} from "@/i18n/routing";
 import {AbilitiesBlock} from "@/app/[locale]/cv/AbilitiesBlock";
 import {ExperienceBlock} from "@/app/[locale]/cv/ExperienceBlock";
 import {EducationBlock} from "@/app/[locale]/cv/EducationBlock";
+import {Locale} from "@/api/locale";
 
 
 const D = {

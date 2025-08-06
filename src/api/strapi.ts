@@ -1,7 +1,7 @@
-import {Locale} from "@/i18n/routing";
 import {strapi} from "@strapi/client";
 import {cache} from "react";
 import {PortfolioItem, PortfolioTag} from "@/api/types";
+import {Locale} from "@/api/locale";
 
 
 // Strapi API .env values

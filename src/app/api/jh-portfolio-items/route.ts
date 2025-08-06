@@ -1,6 +1,6 @@
 import {getPortfolioItems} from "@/api/strapi";
 import {NextRequest} from "next/server";
-import {Locale} from "@/i18n/routing";
+import {Locale} from "@/api/locale";
 
 interface Node {
   text?: string;

@@ -2,11 +2,11 @@
 
 import {Block, CallbackBlock} from "@/components/Block";
 import {twMerge} from "tailwind-merge";
-import {Locale} from "@/i18n/routing";
 import {useState} from "react";
 import _ from "lodash";
 import {PortfolioItem, PortfolioTag} from "@/api/types";
 import {BlocksRenderer} from "@strapi/blocks-react-renderer";
+import {Locale} from "@/api/locale";
 
 
 const D = {

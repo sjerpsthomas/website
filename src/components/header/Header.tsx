@@ -1,8 +1,8 @@
 ﻿import {Block, LinkBlock} from "@/components/Block";
 import {LocaleToggle} from "@/components/header/LocaleToggle";
-import {Locale} from "@/i18n/routing";
 import {getDictKeys} from "@/utils/getDictKeys";
 import {twMerge} from "tailwind-merge";
+import {Locale} from "@/api/locale";
 
 
 const socials = {
@@ -83,17 +83,17 @@ export function Header({locale, currentPage}: {locale: Locale, currentPage: Curr
       {/* Other buttons */}
       <div className="flex flex-wrap justify-center">
         {/* Home */}
-        <LinkBlock className="w-[5rem] md:w-[8rem] md:py-3 shadow-lg" href='/'>
+        <LinkBlock className="w-[5rem] md:w-[8rem] md:py-3 shadow-lg" href='' locale={locale}>
           <p className={twMerge('text-center', currentPage == 'home' && 'font-bold underline')}>Home</p>
         </LinkBlock>
 
         {/* CV */}
-        <LinkBlock className="w-[5rem] md:w-[8rem] md:py-3 shadow-lg" href='/cv'>
+        <LinkBlock className="w-[5rem] md:w-[8rem] md:py-3 shadow-lg" href='cv' locale={locale}>
           <p className={twMerge('text-center', currentPage == 'cv' && 'font-bold underline')}>CV</p>
         </LinkBlock>
 
         {/* Portfolio */}
-        <LinkBlock className="w-[5rem] md:w-[8rem] md:py-3 shadow-lg" href='/portfolio'>
+        <LinkBlock className="w-[5rem] md:w-[8rem] md:py-3 shadow-lg" href='portfolio' locale={locale}>
           <p className={twMerge('text-center', currentPage == 'portfolio' && 'font-bold underline')}>Portfolio</p>
         </LinkBlock>
       </div>

@@ -1,7 +1,7 @@
 import {Header} from "@/components/header/Header";
-import {Locale} from "@/i18n/routing";
 import {PortfolioBlock} from "@/app/[locale]/portfolio/PortfolioBlock";
 import {getPortfolioItems, getPortfolioTags} from "@/api/strapi";
+import {Locale} from "@/api/locale";
 
 
 const D = {

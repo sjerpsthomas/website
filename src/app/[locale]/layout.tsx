@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
 import { Roboto_Flex } from "next/font/google";
 import "../globals.css";
-import {NextIntlClientProvider, hasLocale} from 'next-intl';
-import {notFound} from 'next/navigation';
-import {routing} from '@/i18n/routing';
 import {twMerge} from "tailwind-merge";
-import {SpeedInsights} from "@vercel/speed-insights/next";
+import {Locale} from "@/api/locale";
 
 const font = Roboto_Flex({
   subsets: ['latin'],
@@ -21,18 +18,13 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: Promise<{locale: string}>;
 }) {
-  // Ensure that the incoming `locale` is valid
-  const {locale} = await params;
-  if (!hasLocale(routing.locales, locale)) {
-    notFound();
-  }
+  // Get locale
+  const locale = (await params).locale as Locale;
 
   return (
     <html lang={locale}>
-      <SpeedInsights/>
-
       <body className={twMerge(font.className, 'px-5 pt-5 pb-20 md:px-20 md:pt-10 md:pb-40')}>
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        {children}
       </body>
     </html>
   );

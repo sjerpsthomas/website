@@ -1,8 +1,7 @@
 import {Locale} from "@/i18n/routing";
 import {strapi} from "@strapi/client";
 import {cache} from "react";
-import {PortfolioItem, PortfolioLink, PortfolioTag} from "@/api/types";
-import {BlocksContent} from "@strapi/blocks-react-renderer";
+import {PortfolioItem, PortfolioTag} from "@/api/types";
 
 
 // Strapi API .env values
@@ -23,15 +22,7 @@ const getStrapiLocale = (locale: Locale) => ({
 
 
 // Reduce items response
-type PortfolioItemResponse = {
-  id: number;
-  title: string;
-  subtitle: BlocksContent;
-  image: { url: string };
-  tags: PortfolioTagResponse[];
-  description: BlocksContent;
-  links: PortfolioLink[];
-}
+type PortfolioItemResponse = { image: { url: string } } & PortfolioItem;
 function reduceItems(items: PortfolioItemResponse[]): PortfolioItem[] {
   return items.map(item => ({
     id: item.id,
@@ -59,11 +50,8 @@ type PortfolioTagResponse = {
   id: number;
   name: string;
 }
-function reduceTags(tags: PortfolioTagResponse[]): PortfolioTag[] {
-  return tags.map(tag => ({
-    id: tag.id,
-    name: tag.name
-  }))
+function reduceTags(tags: PortfolioTag[]): PortfolioTag[] {
+  return tags.map(({ id, name }) => ({ id, name }))
 }
 
 // Get all portfolio tags

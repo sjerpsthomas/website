@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Roboto_Flex } from "next/font/google";
+import { Roboto_Flex } from "next/font/google";
 import "../globals.css";
 import {NextIntlClientProvider, hasLocale} from 'next-intl';
 import {notFound} from 'next/navigation';

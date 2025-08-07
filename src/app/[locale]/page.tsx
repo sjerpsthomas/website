@@ -13,8 +13,6 @@ const D = {
     ],
     todo: [
       "Spelletjespagina",
-      "De Next router fixen (hij doet raar bij het wisselen van taal)",
-      "Turbopack fixen (local hot reload werkt niet meer)",
       "Fotopagina?",
     ]
   },
@@ -26,8 +24,6 @@ const D = {
     ],
     todo: [
       "Games page",
-      "Fix the Next router (it's acting strangely when switching languages)",
-      "Fix Turbopack (local hot reload isn't working anymore)",
       "Photo page?",
     ]
   },

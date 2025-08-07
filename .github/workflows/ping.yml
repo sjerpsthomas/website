@@ -1,13 +1,16 @@
-# .github/workflows/ping.yml
 name: Ping Strapi
 
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron:  '*/5 * * * *'
 
 jobs:
   ping:
+    name: A job to ping
     runs-on: ubuntu-latest
+    env:
+      URL: www.thomassjerps.nl/api/jh-portfolio-tags?locale=en
+      METHOD: GET
     steps:
-      - name: Curl your API
-        run: curl -s www.thomassjerps.nl/api/jh-portfolio-tags?locale=en
+      - id: ping
+        uses: sisodiya2421/pinger@master

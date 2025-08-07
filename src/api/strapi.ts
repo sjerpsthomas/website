@@ -33,7 +33,7 @@ function reduceItems(items: PortfolioItemResponse[]): PortfolioItem[] {
     description: item.description,
     links: item.links,
     date: new Date(item.date),
-  })).sort((a: PortfolioItem, b: PortfolioItem) => b.date - a.date);
+  })).sort((a: PortfolioItem, b: PortfolioItem) => b.date.getTime() - a.date.getTime());
 }
 
 // Get all portfolio items

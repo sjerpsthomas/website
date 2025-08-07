@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Curl your API
-        run: curl -s https://your-strapi-site.com/api/_health
+        run: curl -s www.thomassjerps.nl/api/jh-portfolio-tags?locale=en

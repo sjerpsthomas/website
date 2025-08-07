@@ -22,7 +22,7 @@ const getStrapiLocale = (locale: Locale) => ({
 
 
 // Reduce items response
-type PortfolioItemResponse = { image: { url: string } } & PortfolioItem;
+type PortfolioItemResponse = { image: { url: string }, date: string } & PortfolioItem;
 function reduceItems(items: PortfolioItemResponse[]): PortfolioItem[] {
   return items.map(item => ({
     id: item.id,
@@ -32,7 +32,8 @@ function reduceItems(items: PortfolioItemResponse[]): PortfolioItem[] {
     tags: reduceTags(item.tags),
     description: item.description,
     links: item.links,
-  }));
+    date: new Date(item.date),
+  })).sort((a: PortfolioItem, b: PortfolioItem) => b.date - a.date);
 }
 
 // Get all portfolio items

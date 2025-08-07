@@ -18,4 +18,5 @@ export type PortfolioItem = {
   tags: PortfolioTag[];
   description: BlocksContent;
   links: PortfolioLink[];
+  date: Date,
 }

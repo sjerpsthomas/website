@@ -9,9 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@strapi/blocks-react-renderer": "^1.0.2",
-    "@strapi/client": "^1.4.0",
     "@types/lodash": "^4.17.20",
+    "gray-matter": "^4.0.3",
     "lodash": "^4.17.21",
     "next": "15.4.6",
     "react": "19.1.1",

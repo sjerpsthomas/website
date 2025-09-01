@@ -1,6 +1,6 @@
-import {getPortfolioTags} from "@/api/strapi";
 import {NextRequest} from "next/server";
 import {Locale} from "@/api/locale";
+import {getPortfolioTags} from "@/api/portfolio";
 
 
 export async function GET(request: NextRequest) {

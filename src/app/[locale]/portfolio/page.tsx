@@ -1,7 +1,7 @@
 import {Header} from "@/components/header/Header";
 import {PortfolioBlock} from "@/app/[locale]/portfolio/PortfolioBlock";
-import {getPortfolioItems, getPortfolioTags} from "@/api/strapi";
 import {Locale} from "@/api/locale";
+import {getPortfolioItems, getPortfolioTags} from "@/api/portfolio";
 
 
 const D = {
@@ -18,8 +18,8 @@ export default async function PortfolioPage({ params }: { params: Promise<{ loca
   // Get locale
   const locale = (await params).locale as Locale;
 
-  const items = await getPortfolioItems(locale);
-  const tags = await getPortfolioTags(locale);
+  const items = getPortfolioItems(locale);
+  const tags = getPortfolioTags(locale);
 
   // Get dictionary
   const dict = D[locale];

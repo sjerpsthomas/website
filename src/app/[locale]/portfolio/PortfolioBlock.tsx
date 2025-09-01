@@ -4,9 +4,8 @@ import {Block, CallbackBlock} from "@/components/Block";
 import {twMerge} from "tailwind-merge";
 import {useState} from "react";
 import _ from "lodash";
-import {PortfolioItem, PortfolioTag} from "@/api/types";
-import {BlocksRenderer} from "@strapi/blocks-react-renderer";
 import {Locale} from "@/api/locale";
+import {PortfolioItem} from "@/api/portfolio";
 
 
 const D = {
@@ -21,7 +20,7 @@ const D = {
 
 export function PortfolioBlock({
   locale, items, tags
-}: { locale: Locale, items: PortfolioItem[], tags: PortfolioTag[] }) {
+}: { locale: Locale, items: PortfolioItem[], tags: string[] }) {
   // Get dictionary
   const dict = D[locale];
 
@@ -38,30 +37,32 @@ export function PortfolioBlock({
 
 function FilterAndItems({
   locale, items, tags
-} : { locale: Locale, items: PortfolioItem[], tags: PortfolioTag[] }) {
+} : { locale: Locale, items: PortfolioItem[], tags: string[] }) {
+  // Include 'all' as pseudo-tag
+  const allTag = { nl: 'allemaal', en: 'all' }[locale];
+
   // Define filter state
-  const [currentTag, setCurrentTag] = useState<number>(-1);
+  const [currentTag, setCurrentTag] = useState<string>(allTag);
 
   return (<>
     <div className='w-full md:w-[60%] md:min-w-[35rem] flex flex-col items-center'>
       {/* Filter */}
-      <Filter locale={locale} tags={tags} currentTag={currentTag} setCurrentTag={setCurrentTag} />
+      <Filter locale={locale} tags={tags} allTag={allTag} currentTag={currentTag} setCurrentTag={setCurrentTag} />
 
       {/* Items */}
       <Block className='flex flex-col gap-y-10'>
         {/* Tag error */}
-        <PortfolioItems items={items} currentTag={currentTag}/>
+        <PortfolioItems items={items} allTag={allTag} currentTag={currentTag}/>
       </Block>
     </div>
   </>);
 }
 
 function Filter({
-  locale, tags, currentTag, setCurrentTag
-}: { locale: Locale, tags: PortfolioTag[], currentTag: number, setCurrentTag: (newCurrentTag: number) => void }) {
-  // Include 'all' as pseudo-tag
+  locale, tags, allTag, currentTag, setCurrentTag
+}: { locale: Locale, tags: string[], allTag: string, currentTag: string, setCurrentTag: (newCurrentTag: string) => void }) {
   const tagsAndAll = [
-    { id: -1, name: { nl: 'Allemaal', en: 'All' }[locale] },
+    allTag,
     ...tags
   ]
 
@@ -70,11 +71,11 @@ function Filter({
       {
         tagsAndAll.map((tag, tagIndex) =>
           <div key={tagIndex}>
-            <CallbackBlock className={twMerge(currentTag == tag.id ? "bg-amber-300 text-black" : "bg-black", "md:py-3 md:m-1 shadow-lg")}
+            <CallbackBlock className={twMerge(currentTag == tag ? "bg-amber-300 text-black" : "bg-black", "md:py-3 md:m-1 shadow-lg")}
                            onClick={() => {
-                             setCurrentTag(currentTag == tag.id ? -1 : tag.id);
+                             setCurrentTag(currentTag == tag ? allTag : tag);
                            }}>
-              <p className='text-center'>{_.capitalize(tag.name)}</p>
+              <p className='text-center'>{_.capitalize(tag)}</p>
             </CallbackBlock>
           </div>
         )
@@ -84,10 +85,10 @@ function Filter({
 }
 
 function PortfolioItems({
-  items, currentTag
-}: { items: PortfolioItem[], currentTag: number }) {
+  items, allTag, currentTag
+}: { items: PortfolioItem[], allTag: string, currentTag: string }) {
   // Filter items
-  const filteredItems = currentTag == -1 ? items : items.filter(item => item.tags.some(tag => tag.id == currentTag));
+  const filteredItems = currentTag == allTag ? items : items.filter(item => item.tags.some(tag => tag == currentTag));
 
   return filteredItems.map((item, index) => {
     const flip = index % 2 == 0;
@@ -103,20 +104,18 @@ function PortfolioItems({
             <h2>{item.title}</h2>
             <div className='pl-5 flex flex-wrap gap-x-3 gap-y-1'>
               {item.tags.map((tag, tagIndex) =>
-                <div key={tagIndex} className='bg-[#151515] px-2 py-1 rounded-lg shadow-md'>{_.lowerCase(tag.name) }</div>
+                <div key={tagIndex} className='bg-[#151515] px-2 py-1 rounded-lg shadow-md'>{_.lowerCase(tag) }</div>
               )}
             </div>
           </div>
 
           {/* Subtitle */}
           <div className='pl-5 mb-1'>
-            <BlocksRenderer content={item.subtitle} blocks={{
-              paragraph: ({ children }) => <p className="italic">{children}</p>,
-            }}/>
+            <p className='italic'>{item.subtitle}</p>
           </div>
 
           {/* Description */}
-          <BlocksRenderer content={item.description}/>
+          <p>{item.description}</p>
 
           {/* Links */}
           {

@@ -1,8 +1,8 @@
 ﻿import {Block, LinkBlock} from "@/components/Block";
 import {LocaleToggle} from "@/components/header/LocaleToggle";
-import {Locale} from "@/i18n/routing";
 import {getDictKeys} from "@/utils/getDictKeys";
 import {twMerge} from "tailwind-merge";
+import {Locale} from "@/api/locale";
 
 
 const socials = {
@@ -56,7 +56,7 @@ export function Header({locale, currentPage}: {locale: Locale, currentPage: Curr
       {/* Title block */}
       <Block className="flex-1">
         {/* Name */}
-        <h1 className="print:text-3xl">{dict.name}</h1>
+        <h1 className='text-3xl md:text-6xl print:text-2xl'>{dict.name}</h1>
 
         {/* Socials */}
         {
@@ -76,24 +76,24 @@ export function Header({locale, currentPage}: {locale: Locale, currentPage: Curr
     </header>
 
     {/* Nav bar */}
-    <nav className='w-full flex flex-wrap justify-center sticky top-0 rounded-xl md:rounded-3xl bg-[#00000088] backdrop-blur-lg print:hidden'>
+    <nav className='w-full z-10 flex flex-wrap justify-center not-md:py-1 sticky top-2 rounded-xl md:rounded-3xl bg-[#00000088] backdrop-blur-lg print:hidden'>
       {/* Language switcher */}
       <LocaleToggle/>
 
       {/* Other buttons */}
       <div className="flex flex-wrap justify-center">
         {/* Home */}
-        <LinkBlock className="w-[6rem] md:w-[8rem] md:py-3 shadow-lg" href='/'>
+        <LinkBlock className="w-[5rem] md:w-[8rem] md:py-3 shadow-lg" href='' locale={locale}>
           <p className={twMerge('text-center', currentPage == 'home' && 'font-bold underline')}>Home</p>
         </LinkBlock>
 
         {/* CV */}
-        <LinkBlock className="w-[6rem] md:w-[8rem] md:py-3 shadow-lg" href='/cv'>
+        <LinkBlock className="w-[5rem] md:w-[8rem] md:py-3 shadow-lg" href='cv' locale={locale}>
           <p className={twMerge('text-center', currentPage == 'cv' && 'font-bold underline')}>CV</p>
         </LinkBlock>
 
         {/* Portfolio */}
-        <LinkBlock className="w-[6rem] md:w-[8rem] md:py-3 shadow-lg" href='/portfolio'>
+        <LinkBlock className="w-[5rem] md:w-[8rem] md:py-3 shadow-lg" href='portfolio' locale={locale}>
           <p className={twMerge('text-center', currentPage == 'portfolio' && 'font-bold underline')}>Portfolio</p>
         </LinkBlock>
       </div>

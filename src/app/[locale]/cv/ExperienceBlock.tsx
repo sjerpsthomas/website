@@ -1,6 +1,6 @@
-import {Locale} from "@/i18n/routing";
 import {Block} from "@/components/Block";
 import {BulletPointList} from "@/components/BulletPointList";
+import {Locale} from "@/api/locale";
 
 const D = {
   nl: {
@@ -15,6 +15,7 @@ const D = {
           "Software development in praktisch teamverband",
           "Opstellen en verdelen van development- en designtaken",
           "Werken in TypeScript/React/Next.js, met GitHub (issues, PRs)",
+          "Werken met Strapi CMS; migratie naar Strapi v5 faciliteren",
         ],
         timespan: "2024-2025, ±5h/week",
       },
@@ -86,6 +87,7 @@ const D = {
           "Software development in a practical team setting",
           "Planning and delegating development and design tasks",
           "Working with TypeScript/React/Next.js, using GitHub (issues, PRs)",
+          "Working with Strapi CMS; facilitating migration to Strapi v5",
         ],
         timespan: "2024–2025, ~5h/week",
       },

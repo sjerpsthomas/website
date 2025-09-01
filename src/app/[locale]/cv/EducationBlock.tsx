@@ -1,5 +1,5 @@
-import {Locale} from "@/i18n/routing";
 import {Block} from "@/components/Block";
+import {Locale} from "@/api/locale";
 
 
 const D = {

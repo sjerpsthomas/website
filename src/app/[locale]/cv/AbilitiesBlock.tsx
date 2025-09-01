@@ -1,7 +1,7 @@
-import {Locale} from "@/i18n/routing";
 import {Block} from "@/components/Block";
 import {getDictKeys} from "@/utils/getDictKeys";
 import {BulletPointList} from "@/components/BulletPointList";
+import {Locale} from "@/api/locale";
 
 
 const abilities = {

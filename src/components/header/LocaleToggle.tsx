@@ -1,24 +1,23 @@
 'use client'
 
-import {CallbackBlock} from "@/components/Block";
-import {usePathname, useRouter} from '@/i18n/navigation';
-import {useLocale} from "use-intl";
+import {LinkBlock} from "@/components/Block";
 import {twMerge} from "tailwind-merge";
+import {usePathname} from "next/navigation";
+import {determineLocale, Locale} from "@/api/locale";
 
 
 export function LocaleToggle() {
-  // Locale toggle logic
+  // Get pathname and locale
   const pathname = usePathname();
-  const router = useRouter();
-  const locale = useLocale();
+  const locale: Locale = determineLocale(pathname) || 'nl';
 
-  const toggleLocale = () => {
-    const otherLocale = locale == 'nl' ? 'en' : 'nl';
-    router.replace(pathname, { locale: otherLocale });
-  }
+  // Get unlocalized path name and other locale
+  // (This is absolutely terrible)
+  const unlocalizedPathname = pathname.replace(new RegExp(`^/${locale}(/)?`), '');
+  const otherLocale = locale == 'nl' ? 'en' : 'nl';
 
   return (
-    <CallbackBlock className="bg-gray-700 w-[6rem] md:w-[7rem] md:py-3 cursor-pointer shadow-lg" onClick={toggleLocale}>
+    <LinkBlock className="bg-gray-700 w-[4.5rem] md:w-[7rem] md:py-3 cursor-pointer shadow-lg" href={unlocalizedPathname} locale={otherLocale}>
       <p className='text-center'>
         <span className={twMerge(locale == 'nl' && 'font-black underline')}>
           NL
@@ -28,6 +27,6 @@ export function LocaleToggle() {
           EN
         </span>
       </p>
-    </CallbackBlock>
+    </LinkBlock>
   )
 }

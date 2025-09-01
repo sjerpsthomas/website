@@ -1,11 +1,41 @@
 import {Header} from "@/components/header/Header";
-import {Locale} from "@/i18n/routing";
-import {Footer} from "@/components/Footer";
+import {BulletPointList} from "@/components/BulletPointList";
+import {Block} from "@/components/Block";
+import {Locale} from "@/api/locale";
+
+
+const D = {
+  nl: {
+    texts: [
+      "Hoi!",
+      "Welkom bij mijn website. Hier kan je m'n CV en portfolio vinden.",
+      "Ik heb nog een paar plannen voor de site:",
+    ],
+    todo: [
+      "Spelletjespagina",
+      "Fotopagina?",
+    ]
+  },
+  en: {
+    texts: [
+      "Hi!",
+      "Welcome to my website. Here you can find my CV and portfolio.",
+      "I have a few more plans for the site:",
+    ],
+    todo: [
+      "Games page",
+      "Photo page?",
+    ]
+  },
+}
 
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   // Get locale
   const locale = (await params).locale as Locale;
+
+  // Get dictionary
+  const dict = D[locale];
 
   return (
     <>
@@ -14,11 +44,14 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
       {/* Content */}
       <main>
-        {/* TODO */}
-      </main>
+        <Block>
+          <h1>{dict.texts[0]}</h1>
 
-      {/* Footer */}
-      <Footer locale={locale}/>
+          <p>{dict.texts[1]}</p>
+          <p>{dict.texts[2]}</p>
+          <BulletPointList content={dict.todo}/>
+        </Block>
+      </main>
     </>
   );
 }

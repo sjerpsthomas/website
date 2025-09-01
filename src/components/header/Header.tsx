@@ -56,7 +56,7 @@ export function Header({locale, currentPage}: {locale: Locale, currentPage: Curr
       {/* Title block */}
       <Block className="flex-1">
         {/* Name */}
-        <h1>{dict.name}</h1>
+        <h1 className="print:text-3xl">{dict.name}</h1>
 
         {/* Socials */}
         {

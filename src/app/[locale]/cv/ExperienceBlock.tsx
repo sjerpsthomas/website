@@ -33,7 +33,7 @@ const D = {
         timespan: "2023-2024, ±50u/week",
       },
       {
-        title: "Lid werving-/activiteitencommissie",
+        title: "Lid werving- en activiteitencommissie",
         company: "D.S.J.V. Groover, Delft",
         description: "Organiseren van evenementen als secretaris van de wervingscommissie (OWeeCie) en voorzitter " +
           "van de activiteitencommissie (Jassie). " +

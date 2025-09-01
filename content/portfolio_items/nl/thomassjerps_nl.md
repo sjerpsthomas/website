@@ -2,7 +2,7 @@
 {
   "title": "thomassjerps.nl",
   "subtitle": "Website in React/TypeScript/Next.js",
-  "image": "https://leading-whisper-59df6e3f28.media.strapiapp.com/thomassjerps_nl_159b190787.png",
+  "image": "/portfolio/thomassjerps_nl.png",
   "tags": [
     "solo",
     "programmeren"

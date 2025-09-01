@@ -2,7 +2,7 @@
 {
   "title": "Bar tablet",
   "subtitle": "An app to tally beers in Kotlin/Jetpack Compose",
-  "image": "https://leading-whisper-59df6e3f28.media.strapiapp.com/bartablet_29965732e1.png",
+  "image": "/portfolio/bar_tablet.png",
   "tags": [
     "solo",
     "programming",

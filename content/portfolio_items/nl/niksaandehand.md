@@ -2,7 +2,7 @@
 {
   "title": "bit.ly/niksaandehand",
   "subtitle": "Serie korte films",
-  "image": "https://leading-whisper-59df6e3f28.media.strapiapp.com/niksaandehand_02a152778f.png",
+  "image": "/portfolio/niksaandehand.png",
   "tags": [
     "in teamverband",
     "hobby"

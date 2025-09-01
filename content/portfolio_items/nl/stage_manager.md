@@ -2,7 +2,7 @@
 {
   "title": "Stagemanager",
   "subtitle": "Verantwoordelijkheid bij (middel-)groot muziekfestival",
-  "image": "https://leading-whisper-59df6e3f28.media.strapiapp.com/stagemanager_ab82daf281.jpg",
+  "image": "/portfolio/stage_manager.jpg",
   "tags": [
     "in teamverband",
     "vereniging"

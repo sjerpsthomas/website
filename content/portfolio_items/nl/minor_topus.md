@@ -2,7 +2,7 @@
 {
   "title": "Minor: Topus",
   "subtitle": "Interactief 'dier' in CircuitPython",
-  "image": "https://leading-whisper-59df6e3f28.media.strapiapp.com/minor_topus_01ef0c8c31.png",
+  "image": "/portfolio/minor_topus.png",
   "tags": [
     "in teamverband",
     "programmeren",

@@ -2,7 +2,7 @@
 {
   "title": "Invaller/gelegenheids-gigs",
   "subtitle": "Muziek maken voor een enkel optreden",
-  "image": "https://leading-whisper-59df6e3f28.media.strapiapp.com/invallen_8002588669.jpg",
+  "image": "/portfolio/substitute_occasional_gigs.jpg",
   "tags": [
     "muziek",
     "vereniging"

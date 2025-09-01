@@ -2,7 +2,7 @@
 {
   "title": "Minor: Reflect",
   "subtitle": "Video wall with Kinect in Godot/C#",
-  "image": "https://leading-whisper-59df6e3f28.media.strapiapp.com/minor_reflect_d5eae43120.jpg",
+  "image": "/portfolio/minor_reflect.jpg",
   "tags": [
     "in a team",
     "programming",

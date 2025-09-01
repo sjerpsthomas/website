@@ -2,7 +2,7 @@
 {
   "title": "Bachelor's thesis",
   "subtitle": "Optimal 3D depth images",
-  "image": "https://leading-whisper-59df6e3f28.media.strapiapp.com/bachelor_scriptie_d0f4ee19ef.png",
+  "image": "/portfolio/bachelors_thesis.png",
   "tags": [
     "solo",
     "programming",

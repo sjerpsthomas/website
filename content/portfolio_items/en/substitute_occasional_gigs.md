@@ -2,7 +2,7 @@
 {
   "title": "Substitute/occasional gigs",
   "subtitle": "Making music for a single performance",
-  "image": "https://leading-whisper-59df6e3f28.media.strapiapp.com/invallen_8002588669.jpg",
+  "image": "/portfolio/substitute_occasional_gigs.jpg",
   "tags": [
     "music",
     "association"

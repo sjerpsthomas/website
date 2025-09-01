@@ -2,7 +2,7 @@
 {
   "title": "Master's thesis",
   "subtitle": "Research project using Godot/C#, React/TypeScript/Next.js, Python",
-  "image": "https://leading-whisper-59df6e3f28.media.strapiapp.com/masterscriptie_6049f5239f.jpg",
+  "image": "/portfolio/masters_thesis.jpg",
   "tags": [
     "solo",
     "programming",

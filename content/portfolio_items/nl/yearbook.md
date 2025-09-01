@@ -2,7 +2,7 @@
 {
   "title": "Jaarboek",
   "subtitle": "Layout en design van jaarboek",
-  "image": "https://leading-whisper-59df6e3f28.media.strapiapp.com/jaarboek_f7b749a032.png",
+  "image": "/portfolio/yearbook.png",
   "tags": [
     "solo"
   ],

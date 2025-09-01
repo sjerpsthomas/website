@@ -2,7 +2,7 @@
 {
   "title": "Band: Tiewrap",
   "subtitle": "Jazzduo",
-  "image": "https://leading-whisper-59df6e3f28.media.strapiapp.com/tiewrap_bdc9e76677.jpg",
+  "image": "/portfolio/band_tiewrap.jpg",
   "tags": [
     "muziek",
     "vereniging"

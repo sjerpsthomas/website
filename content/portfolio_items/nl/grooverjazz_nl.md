@@ -2,7 +2,7 @@
 {
   "title": "grooverjazz.nl",
   "subtitle": "Onderhoud voor website in React/TypeScript/Next.js",
-  "image": "https://leading-whisper-59df6e3f28.media.strapiapp.com/grooverjazz_nl_6109f308d0.png",
+  "image": "/portfolio/grooverjazz_nl.png",
   "tags": [
     "in teamverband",
     "programmeren",

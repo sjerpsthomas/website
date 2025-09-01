@@ -2,7 +2,7 @@
 {
   "title": "Minor: Nenzo",
   "subtitle": "Interactieve kijkgaten",
-  "image": "https://leading-whisper-59df6e3f28.media.strapiapp.com/minor_nenzo_6b327f34cc.png",
+  "image": "/portfolio/minor_nenzo.png",
   "tags": [
     "in teamverband",
     "programmeren",

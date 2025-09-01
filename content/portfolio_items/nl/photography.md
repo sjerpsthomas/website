@@ -2,7 +2,7 @@
 {
   "title": "Fotografie",
   "subtitle": "Portret, omgeving en optredens",
-  "image": "https://leading-whisper-59df6e3f28.media.strapiapp.com/fotografie_39a417579c.png",
+  "image": "/portfolio/photography.png",
   "tags": [
     "hobby",
     "solo"

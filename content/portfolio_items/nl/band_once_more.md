@@ -3,7 +3,7 @@
   "id": 71,
   "title": "Band: Once More",
   "subtitle": "Jazz combo",
-  "image": "https://leading-whisper-59df6e3f28.media.strapiapp.com/once_more_5f1d276619.jpg",
+  "image": "/portfolio/band_once_more.jpg",
   "tags": [
     "muziek",
     "vereniging"

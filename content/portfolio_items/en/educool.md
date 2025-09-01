@@ -2,7 +2,7 @@
 {
   "title": "Educool",
   "subtitle": "Music production",
-  "image": "https://leading-whisper-59df6e3f28.media.strapiapp.com/educool_26cc551ea6.png",
+  "image": "/portfolio/educool.png",
   "tags": [
     "hobby",
     "music"

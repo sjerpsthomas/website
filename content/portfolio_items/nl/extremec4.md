@@ -2,7 +2,7 @@
 {
   "title": "extremec4",
   "subtitle": "Vier op een Rij met HTML5/CSS/JS",
-  "image": "https://leading-whisper-59df6e3f28.media.strapiapp.com/extremec4_dfb9268d9a.png",
+  "image": "/portfolio/extremec4.png",
   "tags": [
     "in teamverband",
     "programmeren"

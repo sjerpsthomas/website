@@ -2,7 +2,7 @@
 {
   "title": "Groover Top 2-Jazzend",
   "subtitle": "Voting for 'The List of Lists' using Python",
-  "image": "https://leading-whisper-59df6e3f28.media.strapiapp.com/top_2_jazzend_b8158a81cd.png",
+  "image": "/portfolio/groover_top_2_jazzend.png",
   "tags": [
     "solo",
     "programming",

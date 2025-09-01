@@ -2,7 +2,7 @@
 {
   "title": "Videospelletjes!",
   "subtitle": "Game dev in GameMaker, Godot, Unity",
-  "image": "https://leading-whisper-59df6e3f28.media.strapiapp.com/videospelletjes_d8c87011e7.png",
+  "image": "/portfolio/video_games.png",
   "tags": [
     "solo",
     "programmeren",

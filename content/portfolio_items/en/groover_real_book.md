@@ -2,7 +2,7 @@
 {
   "title": "Groover Real Book",
   "subtitle": "Completely revised repertoire book in MuseScore",
-  "image": "https://leading-whisper-59df6e3f28.media.strapiapp.com/realbook_ba79cfb03d.png",
+  "image": "/portfolio/groover_real_book.png",
   "tags": [
     "solo",
     "association"

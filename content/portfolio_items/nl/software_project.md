@@ -2,7 +2,7 @@
 {
   "title": "Softwareproject",
   "subtitle": "IPC voor bedrijfssimulaties",
-  "image": "https://leading-whisper-59df6e3f28.media.strapiapp.com/software_project_4c658d5fe0.png",
+  "image": "/portfolio/software_project.png",
   "tags": [
     "in teamverband",
     "programmeren",

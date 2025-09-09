@@ -92,7 +92,7 @@ export function Header({locale, currentPage}: {locale: Locale, currentPage: Curr
       {/* Language switcher */}
       <LocaleToggle/>
 
-      {/* Other buttons */}
+      {/* Other buttons (1/2)*/}
       <div className="flex flex-wrap justify-center">
         {/* Home */}
         <LinkBlock className="w-[5rem] md:w-[8rem] md:py-3 shadow-lg" href='' locale={locale}>
@@ -103,7 +103,10 @@ export function Header({locale, currentPage}: {locale: Locale, currentPage: Curr
         <LinkBlock className="w-[5rem] md:w-[8rem] md:py-3 shadow-lg" href='cv' locale={locale}>
           <p className={twMerge('text-center', currentPage == 'cv' && 'font-bold underline')}>{dict.pages.cv}</p>
         </LinkBlock>
+      </div>
 
+      {/* Other buttons (2/2)*/}
+      <div className="flex flex-wrap justify-center">
         {/* Portfolio */}
         <LinkBlock className="w-[5rem] md:w-[8rem] md:py-3 shadow-lg" href='portfolio' locale={locale}>
           <p className={twMerge('text-center', currentPage == 'portfolio' && 'font-bold underline')}>{dict.pages.portfolio}</p>

@@ -17,6 +17,9 @@
     @media print { font-variation-settings: 'wdth' 50; }
     /*@apply text-blue-500;*/
   }
+  ul {
+    @apply list-disc list-outside pl-5
+  }
 }
 
 :root {

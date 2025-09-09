@@ -5,10 +5,6 @@ import ContentNL from "./content-nl.mdx"
 import ContentEN from "./content-en.mdx"
 
 
-export function GameImage() {
-  return <img className='w-[30rem] py-10 mx-auto' src='/games.png/' alt='' />
-}
-
 const D = {
   nl: {
     title: "Spelletjes",

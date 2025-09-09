@@ -1,8 +1,8 @@
 import {Header} from "@/components/header/Header";
 import {Block} from "@/components/Block";
 import {Locale} from "@/api/locale";
-import ContentNL from "./content-nl.mdx"
-import ContentEN from "./content-en.mdx"
+import ContentNL from "../../../../content/games/content-nl.mdx"
+import ContentEN from "../../../../content/games/content-en.mdx"
 
 
 const D = {

@@ -34,14 +34,26 @@ const D = {
   nl: {
     name: "Thomas Sjerps",
     socials: socials,
+    pages: {
+      home: "Home",
+      cv: "CV",
+      portfolio: "Portfolio",
+      games: "Spelletjes",
+    }
   },
   en: {
     name: "Thomas Sjerps",
     socials: socials,
+    pages: {
+      home: "Home",
+      cv: "CV",
+      portfolio: "Portfolio",
+      games: "Games",
+    }
   },
 };
 
-type CurrentPage = 'home' | 'cv' | 'portfolio';
+type CurrentPage = 'home' | 'cv' | 'portfolio' | 'games';
 
 export function Header({locale, currentPage}: {locale: Locale, currentPage: CurrentPage}) {
   // Get dictionary
@@ -84,17 +96,22 @@ export function Header({locale, currentPage}: {locale: Locale, currentPage: Curr
       <div className="flex flex-wrap justify-center">
         {/* Home */}
         <LinkBlock className="w-[5rem] md:w-[8rem] md:py-3 shadow-lg" href='' locale={locale}>
-          <p className={twMerge('text-center', currentPage == 'home' && 'font-bold underline')}>Home</p>
+          <p className={twMerge('text-center', currentPage == 'home' && 'font-bold underline')}>{dict.pages.home}</p>
         </LinkBlock>
 
         {/* CV */}
         <LinkBlock className="w-[5rem] md:w-[8rem] md:py-3 shadow-lg" href='cv' locale={locale}>
-          <p className={twMerge('text-center', currentPage == 'cv' && 'font-bold underline')}>CV</p>
+          <p className={twMerge('text-center', currentPage == 'cv' && 'font-bold underline')}>{dict.pages.cv}</p>
         </LinkBlock>
 
         {/* Portfolio */}
         <LinkBlock className="w-[5rem] md:w-[8rem] md:py-3 shadow-lg" href='portfolio' locale={locale}>
-          <p className={twMerge('text-center', currentPage == 'portfolio' && 'font-bold underline')}>Portfolio</p>
+          <p className={twMerge('text-center', currentPage == 'portfolio' && 'font-bold underline')}>{dict.pages.portfolio}</p>
+        </LinkBlock>
+
+        {/* Games */}
+        <LinkBlock className="w-[5rem] md:w-[8rem] md:py-3 shadow-lg" href='games' locale={locale}>
+          <p className={twMerge('text-center', currentPage == 'games' && 'font-bold underline')}>{dict.pages.games}</p>
         </LinkBlock>
       </div>
 

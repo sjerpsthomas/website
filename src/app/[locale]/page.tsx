@@ -44,13 +44,16 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
       {/* Content */}
       <main>
-        <Block>
-          <h1>{dict.texts[0]}</h1>
+        <div className='flex flex-col items-center'>
 
-          <p>{dict.texts[1]}</p>
-          <p>{dict.texts[2]}</p>
-          <BulletPointList content={dict.todo}/>
-        </Block>
+          <Block className='w-full md:w-[80%] md:min-w-[30rem]'>
+            <h1>{dict.texts[0]}</h1>
+
+            <p>{dict.texts[1]}</p>
+            <p>{dict.texts[2]}</p>
+            <BulletPointList content={dict.todo}/>
+          </Block>
+        </div>
       </main>
     </>
   );

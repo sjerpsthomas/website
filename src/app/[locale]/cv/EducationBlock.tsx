@@ -27,7 +27,7 @@ const D = {
     title: "Education",
     educations: [
       {
-        title: "Pre-university education (VWO)",
+        title: "Pre-university education",
         location: "Martinuscollege, Grootebroek",
         timespan: "2013-2019",
       },

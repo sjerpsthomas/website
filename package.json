@@ -16,7 +16,7 @@
     "gray-matter": "^4.0.3",
     "@types/mdx": "^2.0.13",
     "lodash": "^4.17.21",
-    "next": "15.4.6",
+    "next": "15.4.10",
     "react": "19.1.1",
     "react-dom": "19.1.1",
     "tailwind-merge": "^3.3.1"
